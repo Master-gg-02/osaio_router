@@ -1,0 +1,242 @@
+意大利语
+camera
+
+Router
+
+
+
+
+
+
+
+
+
+in linea
+Disconnesso
+
+
+
+
+La funzione di controllo remoto è disattivata. È possibile controllare il router dopo aver collegato il Wi-Fi del router e attivare la funzione di controllo remoto.
+Guida offline del router
+Se il router è offline, puoi provare a fare quanto segue:
+
+1. Assicurati che il dispositivo sia acceso (controlla se l'indicatore LED è acceso).
+2. Prova ad accedere a questa rete Wi-Fi e guarda cosa è successo.
+3.Verifica se il cavo ethernet tra il tuorouter e il modem o il router superiore si collegano bene.
+4.Spegnere il router e riavviarlo.
+5.Se il problema persiste, contatta il tuo provider ISP o contattaci.
+Connettiti al router Wi-Fi
+
+Nota: assicurarsi che il router sia online e connesso a Internet.
+Non hai trovato il router Wi-Fi?
+
+
+Il Wi-Fi del router è connesso e il router esiste già nell'elenco dei dispositivi device
+ritirarsi
+Router rilevato e informazioni sulla configurazione in corso di ottenimento
+Fallisci
+aggiunta non riuscita
+Prova a ottenere di nuovo le informazioni sul router.
+Ripristina dispositivo
+2. In caso di domande, puoi allegare uno screenshot di questa pagina e %se ti aiuteremo a risolverlo il prima possibile.
+Contattaci
+Password amministratore del router
+Ha dimenticato la password?
+Se hai dimenticato la password, puoi aggiungerla di nuovo tornando alla home page dopo aver ripristinato il dispositivo. La password predefinita si trova sul corpo del dispositivo.
+lo so
+Come resettare
+Connettiti al router Wi-Fi e riprova
+Accedere al router
+Connetti il dispositivo
+Collegato con successo!
+Benvenuto nel router Victure!
+Ho letto e accetto %se %s.
+Contratto di licenza per l'utente
+la Dichiarazione sul router Wi-Fi Victure e sulla privacy
+Ottenere informazioni sulla configurazione
+Impossibile ottenere informazioni, riprovare
+Il cavo della rete domestica non è collegato
+1. Assicurarsi che la porta di rete del router sia stata collegata a Internet tramite un cavo di rete, come modem ottici e altri router.\n2 Assicurati che il cavo di rete sia collegato dalla porta WAN di questo router alla porta LAN del modem ottico.\n3. Confermare se il cavo di rete è ben inserito o danneggiato e se il modem ottico è collegato all'alimentazione.\n4. Se ancora non può essere rilevato, contatta il tuo operatore di rete o contattaci.
+prova di nuovo
+saltare
+test
+Connessione di rete anomala
+Impostazione delle linee guida
+Impostazioni di backup trovate. Vuoi usarlo?
+Tipo di connessione WAN
+Nome Wi-Fi 2.4G
+Nome Wi-Fi 5G
+Usa nuova configurazione
+Come resettare il router
+Come resettare il router
+1. Assicurarsi che il router sia acceso. Individuare il pulsante di ripristino o il foro di ripristino sul retro del router.
+2. Tieni premuto il pulsante Ripristina per circa 5-8 secondi finché il LED del router si spegne.
+3.Quindi il router si riavvia e viene reimpostato alle impostazioni predefinite di fabbrica.Questo processo richiede circa 2 minuti.
+Reimposta con successo
+È necessario mantenere il router ACCESO durante il processo di ripristino per evitare danni al firmware del router e guasti.
+Impostazioni di rete
+
+scegli automaticamente
+IP automatico (DHCP)
+Il router è riuscito ad accedere normalmente a Internet. Se non hai bisogno di cambiare la modalità di rete, puoi %s.
+
+IP statico
+indirizzo IP
+Maschera di sottorete
+Gateway
+Server DNS preferito
+Server DNS alternativo
+PPPoE
+nome utente
+parola d'ordine
+PPTP
+dinamico
+Statico
+Modalità indirizzo
+Indirizzo del router
+L2TP
+Selezione automatica della modalità di rete
+Impostare
+
+Operazione non riuscita, riprovare
+Operazione riuscita
+Associa account
+L'associazione dell'account Victure ti consente di accedere e controllare in remoto il router sempre e ovunque. Se non si associa l'account, è possibile controllare il dispositivo solo tramite LAN. è vincolato?
+Il router è stato associato, è necessario chiedere all'altra parte di eliminare il dispositivo per annullare l'associazione o passare %s per aggiungere nuovamente il dispositivo
+Associa dispositivo
+Associa il dispositivo all'account
+Il dispositivo non è riuscito a collegare l'account, fare clic per riprovare.
+Impostazioni Wi-Fi
+Sintesi intelligente del nome Wi-Fi
+Sia il Wi-Fi a banda 2.4G che il Wi-Fi a banda 5G utilizzano lo stesso nome Wi-Fi
+Nome della rete Wi-Fi (SSID)
+nascondi il codice SSID
+Password Wi-Fi
+Supporta la crittografia WPA3
+La password dell'amministratore del router utilizza la password Wi-Fi
+Password amministratore del router
+Usa password Wi-Fi banda 2.4G
+Configurare il backup
+Backup locale
+Le impostazioni del router vengono salvate localmente sul telefono e possono essere rapidamente riutilizzate quando il router viene configurato nuovamente.
+
+La configurazione è andata a buon fine. Il nuovo SSID e la password entreranno in vigore in circa 1 minuto. Ricollegare il telefono al router Wi-Fi in futuro.
+meglio
+più debole
+velocità di download
+Velocità di caricamento
+Dispositivo connesso
+In linea (%s)
+Controllo dei genitori
+Impostazioni di sicurezza
+Gestione Wi-Fi
+Wi-Fi ospite
+impostazioni orario
+Non vincolato, è possibile accedere a %s da remoto
+Associa account
+Impostazioni del router
+Nome del router
+Informazioni sul dispositivo
+Indicatore del router
+
+Gestione della connessione remota
+Versione IP di rete
+Versione del firmware
+Riavvia il router
+Elimina dispositivo
+Disattiva la gestione remota
+Dopo che la gestione remota è stata disattivata, il dispositivo può essere controllato solo collegandosi al WiFi del router, ma il controllo remoto non è possibile. Se continuare?
+Salva
+versione hardware
+numero di serie
+Tipo di hardware
+Indirizzo MAC LAN
+Indirizzo IP LAN
+Indirizzo MAC WAN
+Indirizzo IP WAN
+Server DNS
+Tempo in linea
+Promemoria aggiornamento
+Il processo di aggiornamento del firmware richiederà alcuni minuti e il telefono verrà disconnesso dal router nel mezzo. \nNon spegnere il router durante l'aggiornamento, altrimenti il dispositivo verrà danneggiato.
+Inizia ad aggiornare
+Aggiornamento del firmware
+L'aggiornamento richiederà alcuni minuti. \nEvita di utilizzare un router durante il processo.
+Non spegnere/ripristinare durante il processo di aggiornamento, altrimenti il dispositivo verrà danneggiato.
+Aggiornamento del firmware
+Aggiornamento non riuscito, riprovare
+aggiornamento riuscito
+Versione attuale: %s
+Sono necessari circa 2 minuti per riavviare il router. Potrebbe essere necessario riconnettersi al router dopo il riavvio. Sei sicuro di riavviare?
+Il router verrà rimosso dall'elenco dei dispositivi. Dopo l'eliminazione, non sarai in grado di controllare il dispositivo tramite l'APP. Vuoi continuare a eliminare?
+precedente a
+%s giorni
+%s ore
+Scarica:
+Caricare:
+In linea:
+Consenti l'accesso alla rete
+Massima velocità di caricamento
+Velocità minima di caricamento
+Dettagli del dispositivo
+
+Marca
+Modalità di accesso:
+connessione:
+Controlla il periodo di tempo Internet del dispositivo
+Telefono e tablet
+Seleziona l'attrezzatura
+Sotto protezione
+io
+Equipaggiamento protetto
+Periodo di tempo in cui il dispositivo può essere online
+Sei sicuro di eliminare?
+Imposta il periodo di tempo in cui il dispositivo può andare online
+Programma di accesso a Internet
+Nella modalità password, tutti i dispositivi che hanno immesso la password Wi-Fi corretta possono essere autorizzati ad accedere alla rete.
+uso
+Controllo di accesso
+Livello di sicurezza: %s
+medio
+alto
+Modalità password
+Modello di autorizzazione
+Qualcuno potrebbe aver decifrato la tua password WiFi per utilizzare la tua rete, causando il rallentamento della rete.
+Modalità di autorizzazione consigliata
+In questa modalità, il dispositivo necessita del tuo consenso sull'APP per accedere alla tua rete
+nuovo dispositivo
+lista bianca
+lista nera
+
+Rifiuto
+Accetto di visitare
+Elimina
+Nessun dispositivo nell'elenco
+Accesso remoto al router, questa pagina non può essere configurata
+Programma Wi-Fi
+Condividi Wi-Fi con QR Code
+Se usi un telefono Android, usa il
+Lettore di codici QR del browser web.
+Se usi un iPhone, usa QR Code Reader Codedel Centro di controllo per scansionare il codice QR. È necessario aggiungere prima il lettore di codici QR in modo che appaia nel Centro di controllo.
+Scorri verso l'alto dalla parte inferiore dello schermo per visualizzare il Centro di controllo e puoi trovare il lettore di codici QR.
+Imposta il periodo di tempo per la disattivazione automatica del Wi-Fi
+Periodo di tempo di spegnimento automatico del WiFi
+Il Wi-Fi ospite consente ai visitatori di accedere alla rete, ma non consente l'accesso alle apparecchiature di rete locale.
+Scansionando questo codice QR con lo scanner di codici QR sul tuo telefono cellulare, puoi unirti alla rete Wi-Fi ospite.
+Ora corrente del router
+Copia l'ora del telefono
+Sincronizza automaticamente l'ora di rete
+Aggiungi dispositivo
+Vuoi continuare ad uscire dalla pagina?
+
+Il video della telecamera verrà caricato direttamente sulla stazione base.
+%s1 non può essere vuoto
+Assicurati che la regola %s1 sia: %s2
+Assicurati che la lunghezza di %s1 sia controllata all'interno di %s2-%s3
+Assicurati che l'intervallo di dimensioni di %s1 sia %s2-%s3
+
+%s errore
+L'APP non è connessa al Wi-Fi del router e non può accedere al router Connettiti al Wi-Fi del router
+Connessione fallita
+L'ora del router non è coerente con l'ora del telefono cellulare, sincronizzare prima l'ora e quindi impostare il piano temporale
+tempo sincronizzato

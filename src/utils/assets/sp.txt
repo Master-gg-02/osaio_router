@@ -1,0 +1,252 @@
+西班牙语
+Cámara
+
+Enrutador
+
+
+
+
+
+
+
+
+
+En línea
+Desconectado
+
+
+
+
+La función de control remoto está desactivada. Puede controlar su enrutador después de conectar el Wi-Fi de su enrutador y activar la función de control remoto.
+Ayuda del enrutador sin conexión
+Si el enrutador está fuera de línea, puede intentar hacer lo siguiente:
+
+1. Asegúrese de que el dispositivo esté encendido （Mire si el indicador LED está encendido).
+2. Intente unirse a esta red Wi-Fi y vea qué sucedió.
+3.Compruebe si el cable Ethernet entre su
+4. Apague el enrutador y reinícielo.
+5. Si el problema persiste, comuníquese con su proveedor de ISP o contáctenos.
+Conéctese al enrutador Wi-Fi
+
+Nota: asegúrese de que el enrutador esté encendido y conectado a Internet.
+¿No se encuentra el enrutador WiFi?
+
+
+El Wi-Fi del enrutador está conectado y el enrutador ya está en la lista de dispositivos.
+Salida
+Se detecta el enrutador y se obtiene información de configuración.
+No lo obtengas
+No se pudo agregar
+Vuelva a intentarlo para obtener la información del enrutador.
+Reiniciar el dispositivo
+2. Si tiene un problema, puede adjuntar una captura de pantalla de esta página y% s le ayudará a resolver el problema lo antes posible.
+Contáctenos
+Contraseña de administrador del enrutador
+¿Contraseña olvidada?
+Si olvidó su contraseña, puede volver a agregarla volviendo a la página de inicio después de restablecer el dispositivo. La contraseña predeterminada se puede encontrar en el cuerpo del dispositivo.
+He entendido
+Cómo reiniciar
+Conecta el enrutador Wi-Fi e inténtalo de nuevo.
+Conexión al enrutador
+Conecta el dispositivo
+¡Conectado exitosamente!
+¡Bienvenido al enrutador Victure!
+He leído y acepto% sy% s.
+Acuerdo de licencia de usuario final
+Declaración de privacidad del enrutador Wi-Fi Victure
+Obtener información de configuración
+No se pudo obtener la información. Vuelva a intentarlo.
+El cable de la red doméstica no está conectado
+"1. Asegúrese de que la conexión de red del enrutador esté conectada a Internet mediante un cable de red, p. Ej. B. un gato ligero, otros enrutadores, etc.
+\ n2. Asegúrese de que el cable de red del puerto WAN de este enrutador esté conectado al puerto LAN del Light Cat.
+\ n3. Asegúrese de que el cable de red esté firmemente enchufado o dañado, y que el gato óptico esté conectado a la fuente de alimentación.
+\ n4. Si aún no se reconoce, comuníquese con su operador de red o contáctenos."
+Prueba de nuevo
+saltar
+Ser probado
+Conexión de red anormal
+Instrucciones de configuración
+Se ha encontrado la configuración de copia de seguridad. ¿Le gustaría usarlo?
+Tipo de conexión WAN
+Nombre de Wi-Fi 2.4G
+Nombre de Wi-Fi 5G
+Usar nueva configuración
+Usar respaldo
+Restablecer el enrutador
+1. Asegúrese de que el enrutador esté encendido y ubique el botón o el orificio de reinicio en la parte posterior del enrutador.
+2. Mantenga presionado el botón de reinicio durante aproximadamente 5-8 segundos hasta que se apague el LED del enrutador.
+3. El enrutador se reiniciará y se restablecerá a la configuración de fábrica, lo que demorará aproximadamente 2 minutos.
+Restablecer con éxito
+Debe mantener el enrutador encendido durante el proceso de reinicio para evitar daños y fallas en el firmware del enrutador.
+Configuraciones de Internet
+
+Elección automática
+IP automática (DHCP)
+
+Saltar
+IP estática
+Dirección IP
+Máscara de subred
+Puerta
+DNS primario
+DNS secundario
+PPPoE (de ISP)
+Nombre de usuario
+Contraseña
+PPTP
+Dinámica
+Estático
+Modo de dirección
+Dirección del servidor
+L2TP
+
+Hospedarse
+
+Operación fallida. Inténtalo de nuevo.
+Operación exitosa
+Vincular cuenta
+Vincular una cuenta Victure le permite acceder y controlar de forma remota su enrutador desde cualquier lugar y en cualquier momento. Si no vincula su cuenta, solo puede controlar el dispositivo a través de su LAN. ¿Unir o no?
+El enrutador se ha vinculado, debe pedirle a la otra parte que elimine el dispositivo para desvincularlo, también puede pasar% s antes de poder volver a agregar el dispositivo
+Vincular dispositivos
+Vincular dispositivos a la cuenta
+No se pudo vincular la cuenta del dispositivo, haga clic e intente nuevamente.
+Configuraciones de Wi-Fi
+SSID integrado inteligente
+Tanto el Wi-Fi 2.4G como el Wi-Fi 5G usan el mismo nombre de Wi-Fi
+Nombre de la red Wi-Fi (SSID)
+SSID oculto
+Contraseña de wifi
+Soporte de cifrado WPA3
+Use la contraseña de Wi-Fi como contraseña de administrador del enrutador
+Contraseña de administrador del enrutador
+Use la contraseña de 2.4G Wi-Fi
+Establecer copia de seguridad
+Copia de seguridad local
+Si guarda estas configuraciones en el teléfono, puede usar estas configuraciones rápidamente cuando reconfigure este enrutador o lo reemplace con un nuevo enrutador.
+Nota
+La configuración es correcta. El nuevo SSID y la contraseña entrarán en vigor en aproximadamente 1 minuto. Vuelva a conectar su teléfono móvil al enrutador Wi-Fi en el futuro.
+Excelente
+
+Tasa de descarga
+Tasa de carga
+Dispositivos conectados
+En línea (% s)
+Control parental
+Configuraciones de seguridad
+Gestión de Wi-Fi
+Wi-Fi para invitados
+Ajustes de hora
+
+Vincular cuenta
+Configuración del enrutador
+Nombre del enrutador
+Información de Devie
+Indicador LED del enrutador
+
+Habilitación de gestión remota
+Versión de IP de red
+Versión de firmware
+Reiniciar el enrutador
+Retire el dispositivo
+Desactivar la administración remota
+Una vez que haya desactivado la administración remota, solo podrá controlar el dispositivo a través de una conexión a la WLAN del enrutador y, por lo tanto, ya no podrá operarlo de forma remota. ¿Continúa?
+Ahorrar
+versión del hardware
+Número de serie
+Tipo de hardware
+Dirección MAC de LAN
+Dirección IP de LAN
+Dirección MAC WAN
+Dirección IP WAN
+Servidor DNS
+Tiempo en línea
+Consejos de actualización
+"Tardará unos minutos en actualizarse a
+nuevo firmware Y su teléfono
+desconectarse del enrutador durante
+actualizar. \ nPor favor, NO desconecte la alimentación del enrutador
+suministro durante la actualización; de lo contrario, podría dañar el dispositivo."
+Actualizar ahora
+Actualización de firmware en curso
+La actualización tardará unos minutos. Evite \ n utilizar el enrutador durante este tiempo.
+No apague / vuelva a apagar el dispositivo durante el proceso de actualización, ya que esto dañará el dispositivo.
+Actualización de firmware
+Actualización fallida, inténtelo de nuevo
+Actualización exitosa
+Versión actual:% s
+El reinicio del enrutador inalámbrico demora aproximadamente 2 minutos, es posible que deba volver a conectarse al enrutador después del reinicio. ¿Estás seguro de que necesitas reiniciar el dispositivo?
+Este enrutador se eliminará de la lista de dispositivos y ya no podrá administrarse con esta APLICACIÓN. ¿Está seguro de que necesita quitar el enrutador?
+antes de
+% s día (s)
+% s hora (s)
+Descargar
+Subir
+En línea
+Permitir el acceso a la red
+Velocidad de carga máxima
+Velocidad de carga mínima
+Detalles del dispositivo
+
+La marca
+Modo de acceso
+conexión
+Controlar el período de tiempo de Internet del dispositivo
+Teléfono móvil y tableta
+Seleccione el dispositivo
+Protegido
+Yo mismo
+Dispositivos protegidos
+Período de tiempo en el que se permite que el dispositivo se conecte
+¿Estás seguro de que quieres eliminarlo?
+Establecer la cantidad de tiempo que los dispositivos pueden acceder a Internet
+Configuración de la hora de acceso a Internet
+El modo de contraseña permite que cualquier dispositivo que haya ingresado la contraseña correcta de Wi-Fi acceda a la red.
+Solicitar
+Control de acceso
+Nivel seguro:% s
+Medio
+Elevado
+Modo de contraseña
+Modo de autorización
+En este modo, si la contraseña de WiFi está descifrada y la red está en uso, la ralentizará.
+Se recomienda el modo de autorización.
+En este modo, solo los dispositivos con su consentimiento para esta APLICACIÓN pueden acceder a la red.
+Nuevos dispositivos
+Lista blanca
+Lista negra
+
+desperdicio
+Aceptar visitar
+Claro
+No hay ningún dispositivo en la lista
+Acceso remoto al enrutador, esta página no se puede configurar
+Configuración de tiempo de Wi-Fi
+Comparte Wi-Fi con código QR
+"Si usa un teléfono Android, por favor use el
+Lector de códigos QR del navegador web."
+"Lector de códigos QR aparece en la mano derecha
+de la barra de entrada."
+"Si utiliza un iPhone, utilice un lector de códigos QR
+del Centro de Control para escanear el código QR. Primero debe agregar un lector de códigos QR para que aparezca en el Centro de control."
+Deslice el dedo hacia arriba desde la parte inferior de la pantalla para ver el Centro de control y podrá encontrar el lector de códigos QR.
+Configure un horario para que WiFi se apague con regularidad.
+Periodo de inactividad de WiFi
+Guest Wi-Fi proporciona acceso a Internet para invitados, pero no permite el acceso a su red local.
+Escanee este código QR para unirse a la red Wi-Fi para invitados utilizando el lector de códigos QR de su teléfono.
+Hora actual del enrutador
+Copia la hora del teléfono
+Sincronización automática con la hora de la red.
+añadir dispositivo
+¿Quieres salir del sitio?
+
+Las grabaciones de la cámara se cargan y guardan en el concentrador conectado.
+% s1 no puede estar vacío
+Asegúrese de que la regla% s1 sea:% s2
+Asegúrese de que la longitud de% s1 se encuentre entre% s2-% s3
+Asegúrese de que% s1 tenga un rango de tamaño de% s2-% s3
+
+% s es incorrecto
+La aplicación no está conectada al enrutador wi-fi, no puede acceder al enrutador, conecte la aplicación al enrutador wi-fi
+La conexión falló
+La hora del enrutador no coincide con la hora del teléfono, primero sincronice la hora y luego configure el horario
+Sincronizar la hora

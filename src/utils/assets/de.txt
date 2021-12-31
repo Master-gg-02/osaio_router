@@ -1,0 +1,246 @@
+德语
+Kamera
+
+Router
+
+
+
+
+
+
+
+
+
+Online
+Offline
+
+
+
+
+Die Fernbedienungsfunktion ist ausgeschaltet. Sie können Ihren Router steuern, nachdem Sie das Wi-Fi des Routers verbunden und die Fernbedienungsfunktion eingeschaltet haben.
+Router Offline-Hilfe
+Wenn der Router offline ist, können Sie Folgendes versuchen:
+
+1. Vergewissern Sie sich, dass das Gerät eingeschaltet ist（Schauen Sie, ob die LED-Anzeige leuchtet).
+2. Versuchen Sie, diesem Wi-Fi-Netzwerk beizutreten und sehen Sie, was passiert.
+3. Prüfen Sie, ob das Ethernet-Kabel zwischen Ihrem Router und Ihrem Modem oder dem oberen Router gut verbunden ist.
+4. Schalten Sie den Router aus und starten Sie ihn neu.
+5. Wenn das Problem weiterhin besteht, wenden Sie sich an Ihren ISP-Anbieter oder an uns.
+Mit Router Wi-Fi verbinden
+
+Hinweis: Bitte stellen Sie sicher, dass der Router eingeschaltet und mit dem Internet verbunden ist.
+Router Wi-Fi nicht gefunden?
+
+
+Wi-Fi des Routers ist verbunden und der Router ist bereits in der Geräteliste vorhanden
+Beenden
+Der Router wird erkannt und erhält Konfigurationsinformationen
+Nicht bekommen
+Hinzufügen fehlgeschlagen
+Bitte versuchen Sie erneut, die Router-Informationen zu erhalten.
+Gerät zurücksetzen
+2. Wenn Sie ein Problem haben, können Sie einen Screenshot dieser Seite anhängen und %s，wird Ihnen bei der Lösung des Problems so schnell wie möglich helfen.
+Kontaktieren Sie uns
+Router Admin Passwort
+Passwort vergessen？
+Wenn Sie Ihr Passwort vergessen haben, können Sie es wieder hinzufügen, indem Sie das Gerät zurücksetzen und zur Startseite zurückkehren. Das Standardpasswort finden Sie auf dem Gehäuse des Geräts.
+Ich hab's
+Wie zurücksetzt
+Bitte schließen Sie den Router Wi-Fi an und versuchen Sie es erneut
+Anmelden am Router
+Gerät anschließen
+Erfolgreich verbunden!
+Willkommen bei Victure router!
+Ich habe die %s und %s gelesen und stimme ihnen zu.
+Endbenutzer-Lizenzvertrag
+die Erklärung zu Victure Wi-Fi Router und Datenschutz
+Konfigurationsinformationen werden eingeholt
+Informationen konnten nicht abgerufen werden, bitte versuchen Sie es erneut
+Nicht angeschlossenes Heimnetzwerkkabel
+"1. Bitte vergewissern Sie sich, dass der Netzwerkanschluss des Routers über ein Netzwerkkabel mit dem Internet verbunden ist, wie z. B. eine Lichtkatze, andere Router usw.
+\n2. Bitte vergewissern Sie sich, dass das Netzwerkkabel vom WAN-Port dieses Routers an den LAN-Port des Light Cat angeschlossen ist.
+\n3. Bitte vergewissern Sie sich, dass das Netzwerkkabel fest eingesteckt oder beschädigt ist, und dass der optische Kat an die Stromversorgung angeschlossen ist.
+\n4. Wenn er immer noch nicht erkannt wird, wenden Sie sich bitte an Ihren Netzbetreiber oder kontaktieren Sie uns.
+Übersetzt mit www.DeepL.com/Translator (kostenlose Version)"
+Erneut testen
+überspringen
+Getestet werden
+Netzwerkverbindung abnormal
+Konfigrationsanleitung
+Backup-Einstellungen gefunden. Möchten Sie sie verwenden?
+WAN-Verbindung Typ
+2.4G Wi-Fi Name
+5G Wi-Fi Name
+Neue Konfiguration verwenden
+Sicherung verwenden
+Zurücksetzen des Routers
+1. Vergewissern Sie sich, dass der Router eingeschaltet ist, und suchen Sie die Reset-Taste oder das Reset-Loch auf der Rückseite des Routers.
+2. Halten Sie die Reset-Taste für ca. 5-8 Sekunden gedrückt, bis die LED des Routers erlischt.
+3. Der Router wird neu gestartet und auf die Werkseinstellungen zurückgesetzt, was ca. 2 Minuten dauert.
+Erfolgreich zurücksetzen
+Sie müssen den Router während des Rücksetzvorgangs eingeschaltet lassen, um Schäden an der Router-Firmware und Ausfälle zu vermeiden.
+Internet-Einstellungen
+
+Automatische Wahl
+Automatische IP (DHCP)
+
+überspringen
+Statische IP
+IP-Adresse
+Subnetz-Maske
+Gateway
+Primärer DNS
+Sekundärer DNS
+PPPoE(vom ISP)
+Benutzer Name
+Passwort
+PPTP
+Dynamisch
+Statisch
+Adress-Modus
+Server-Adresse
+L2TP
+
+Aufstellen
+
+Operation fehlgeschlagen. Bitte versuchen Sie es erneut.
+Operation Erfolgreich
+Konto binden
+Das Binden eines Victure-Kontos ermöglicht Ihnen den Fernzugriff und die Fernsteuerung Ihres Routers von überall und zu jeder Zeit. Wenn Sie Ihr Konto nicht binden, können Sie das Gerät nur über Ihr LAN steuern. Binden oder nicht?
+Der Router wurde gebunden, Sie müssen die andere Partei bitten, das Gerät zu löschen, um die Bindung aufzuheben, Sie können auch %s übergeben, bevor Sie das Gerät wieder hinzufügen können
+Geräte binden
+Geräte an das Konto binden
+binden Gerätekonto fehlgeschlagen, bitte klicken Sie auf und erneut versuchen.
+Wi-Fi Einstellungen
+Intelligente integrierte SSID
+Sowohl 2,4G-Wi-Fi als auch 5G-Wi-Fi verwenden denselben Wi-Fi-Namen
+Wi-Fi-Netzwerkname (SSID)
+Versteckte SSID
+Wi-Fi Passwort
+Unterstützung der WPA3-Verschlüsselung
+Wi-Fi-Passwort als Admin-Passwort des Routers verwenden
+Admin-Passwort des Routers
+Verwenden Sie das Passwort von 2.4G Wi-Fi
+Backup einstellen
+Lokales Backup
+Sichern Sie diese Einstellungen auf dem Telefon, dann können Sie diese Einstellungen schnell verwenden, wenn Sie diesen Router neu konfigurieren oder durch einen neuen Router ersetzen.
+Hinweis
+
+Exzellent
+
+Download-Rate
+Upload-Rate
+Geräte Verbunden
+Online(%s)
+Kinderschutz
+Sicherheits-Einstellungen
+Wi-Fi-Management
+Gast-WiFi
+Zeit-Einstellungen
+Ungebunden, auf %s kann aus der Ferne zugegriffen werden
+Konto binden
+Router-Einstellungen
+Router Name
+Gerät-Informationen
+Router-LED-Anzeige
+
+Verwaltung von Fernverbindungen
+Netzwerk IP Version
+Firmware Version
+Router neustarten
+Gerät löschen
+Fernverwaltung ausschalten
+Nachdem Sie die Fernverwaltung ausgeschaltet haben, können Sie das Gerät nur noch über eine Verbindung mit dem WLAN des Routers steuern und es somit nicht mehr aus der Ferne bedienen. Geht es weiter?
+Speichern
+Hardware-Version
+Serien-Nummer
+Hardware-Typ
+LAN MAC Adresse
+LAN IP Addresse
+WAN MAC Addresse
+WAN IP Addresse
+DNS Server
+Online Zeit
+Upgrade-Tipps
+Das Update auf die neue Firmware dauert ein paar Minuten. Und Ihr Telefon wird während der Aktualisierung vom Router getrennt. Bitte unterbrechen Sie die Stromversorgung des Routers während des Updates NICHT, da dies sonst zu Schäden am Gerät führen kann.
+Jetzt aktualisieren
+Firmware-Update läuft
+Das Upgrade wird einige Minuten dauern. Bitte vermeiden Sie es, den Router während \n zu benutzen.
+Bitte schalten Sie das Gerät während des Upgrade-Vorgangs nicht aus/zurück, da dies das Gerät beschädigt.
+Firmware-Upgrade
+Upgrade fehlgeschlagen, bitte versuchen Sie es erneut
+Upgrade erfolgreich
+Aktuelle Version: %s
+Der Neustart des WLAN-Routers dauert ca. 2 Minuten, möglicherweise müssen Sie sich nach dem Neustart erneut mit dem Router verbinden. Sind Sie sicher, dass Sie das Gerät neu starten müssen?
+Dieser Router wird aus der Geräteliste entfernt und kann dann nicht mehr mit dieser APP verwaltet werden. Sind Sie sicher, dass Sie den Router entfernen müssen?
+zuvor
+%s Tag(e)
+%s Stunde(n)
+Download
+Upload
+Online
+Zugriff auf Netzwerk zulassen
+Maximale Upload-Geschwindigkeit
+Minimale Upload-Geschwindigkeit
+Geräte-Details
+
+Die Marke
+Zugriffsmodus
+Verbindung
+
+Handy und Tablet
+Gerät auswählen
+geschützt werden
+Ich selbst
+Geschützte Geräte
+
+Sind Sie sicher, dass Sie es löschen wollen?
+Einstellen des Zeitraums, in dem Geräte auf das Internet zugreifen dürfen
+Internetzugang Zeiteinstellung
+Im Passwortmodus wird allen Geräten, die das richtige Wi-Fi-Passwort eingegeben haben, den Zugriff auf das Netzwerk gestattet.
+Anwenden
+Zugriffskontrolle
+Sicheres Niveau:%s
+Mittleres
+Hoch
+Passwort-Modus
+Berechtigungs-modus
+In diesem Modus führt es zu einer Verlangsamung des Netzwerks, wenn das WiFi-Passwort geknackt wird und das Netzwerk verwendet wird.
+Der Autorisierungsmodus wird empfohlen.
+In diesem Modus können nur Geräte mit Ihrer Zustimmung zu dieser APP auf das Netzwerk zugreifen.
+Neue Geräte
+Weiße liste
+Schwarze Liste
+
+Abfall
+Besuch zustimmen
+Löschen
+Es ist kein Gerät in der Liste
+Fernzugriff auf den Router, diese Seite kann nicht konfiguriert werden
+Wi-Fi Zeiteinstellung
+Wi-Fi mit QR-Code freigeben
+Wenn Sie ein Android-Telefon verwenden, benutzen Sie bitte den QR-Code-Reader des Webbrowsers.
+Der QR-Code-Reader befindet sich rechts neben der Eingabeleiste.
+Wenn Sie ein IPhone verwenden, verwenden Sie bitte den QR-Code-Reader des Control Centers, um den QR-Code zu scannen. Sie sollten den QR-Code-Reader zuerst zum Control Center hinzufügen.
+
+Richten Sie einen Zeitplan für das regelmäßige Ausschalten des WiFi ein.
+WiFi-Auto-off-Zeitraum
+Guest Wi-Fi bietet einen Internetzugang für Gäste, erlaubt aber keinen Zugriff auf Ihr lokales Netzwerk.
+Scannen Sie diesen QR-Code, um dem Gast-Wi-Fi-Netzwerk beizutreten mit dem QR-Code-Reader auf Ihrem Telefon.
+Aktuelle Zeit des Routers
+Uhrzeit des Handys kopieren
+Automatische Synchronisierung mit der Netzwerk-Zeit
+Gerät hinzufügen
+Wollen Sie die Seite weiter verlassen?
+
+Die Kameraaufzeichnungen werden uploadet und auf dem angeschlossenen Hub gespeichert.
+%s1 darf nicht leer sein
+Bitte stellen Sie sicher, dass die %s1-Regel lautet: %s2
+Bitte achten Sie darauf, dass die Länge von %s1 innerhalb von %s2-%s3 liegt
+Stellen Sie sicher, dass %s1 einen Größenbereich von %s2-%s3 hat
+
+%s ist fehlerhaft
+APP ist nicht mit dem Router-Wi-Fi verbunden, kann nicht auf den Router zugreifen, bitte verbinden Sie APP mit dem Router-Wi-Fi
+Verbindung fehlgeschlagen
+Die Zeit des Routers stimmt nicht mit der Zeit des Telefons überein, bitte synchronisieren Sie zuerst die Zeit und stellen Sie dann den Zeitplan ein
+Die zeit synchronisieren

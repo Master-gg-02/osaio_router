@@ -1,0 +1,253 @@
+英文
+Camera
+Add Device
+Router
+Device Type
+Wi-Fi Router
+AX18
+AX30
+MX18
+MX30
+Wi-Fi Extender
+EX18
+EX30
+Online
+Offline
+Bound
+UnBound
+Clould Device
+Local Device
+Remote Management is disabled.You could turn on the Remote Management function after connecting your router's Wi-Fi.
+Router Offline Help
+If the router is offline, you may try doing the followings:
+If the router is offline, you may try doing the followings or press the Diagnose button to identify the issus automatically.
+1. Make sure that the device is powered on（Look if LED indicator is  ON).
+2.Try to  join this Wi-Fi network and log in with PC or phone web browser.
+3.Check  if the  ethernet cable  between  your router and  your modem or upper router  connects well.
+4.Power off the router and restart it.
+5.If the problem persists, please contact your ISP provider or contact us.
+Connect to Your Wi-Fi
+"1. Connect your phone to the rouer's Wi-Fi in your phone's WLAN or Wi-Fi settings.The default SSID of Victure router is such as Victure-WiFi or Victure-5G-WiFi. 
+2.Return to Victure Home APP and continue."
+Note：Please make sure the router is powered on and reset to factory default settings.
+No Wi-Fi found？
+Victure-F028
+Go to Connect
+Connected to the router's Wi-Fi successfully.This router is already in the device list.
+Exit
+A router is found and the APP is getting it's configuration information.
+Get Informantion Failed.
+Add failed
+Get router information failed.Please try again.
+Reset the Device
+
+Please contact us
+Router Admin Password
+Forgot password？
+You can reset the device by long pressing the reset button and return to set it up again. The default password is printed on the router cover.
+I got it
+How to Reset the Router
+Please connect to the router's Wi-Fi and try angin.
+Logging in to the router
+Connecting Device
+Connected Successfully!
+Welcome to  the Victure router!
+I have read and agree to the %s  and %s.
+End User Licnese Agreement
+the Statement About Victure Wi-Fi Router and Privacy
+Getting configuration info
+Loading failed. Please try again
+"The ethernet cable between your 
+router and your modem or upper router does not connect well."
+前面有分段写的——by牦牛
+Test Again
+Skip
+Testing
+Internet Not Connected
+Quick Setup Guide
+Backup settings found.Do you want to use it?
+Internet Connection Type
+2.4G Wi-Fi Name
+5G Wi-Fi Name
+Use New Configuration
+Use This Backup
+How to reset the router
+1. Make sure the router is powered on.Locate the reset button or reset hole on  the router.
+2.Press and hold the Reset button for about 5-8 seconds until the router’s LED blink slowly...
+3.Then the router restarts and is reset to factory default settings.This process takes about 2 minutes.After resetting, you could set up it again.
+Reset Successfully
+"To avoid the risk of corrupting the firmware, DO NOT turn off the router. Wait until the
+router finishes restarting"
+Internet Settings
+Connection Type
+Auto-detect
+Automatic IP(DHCP)
+Internet Connected.You may Skip this step if you don't need to change connection type..
+Skip
+Static IP
+IP Address
+Subnet Mask
+Gateway
+Primary DNS
+Secondary DNS
+PPPoE(from ISP)
+User Name
+Password
+PPTP
+Dynamic
+Static
+Address Mode
+Server Address
+L2TP
+Detecting...
+Setting up
+Saving Configuration...
+Saving configuration failed.Please retry.
+Operation Succeeded
+Bind to Victure ID
+"You may bind this router to your APP account for remote managem and more fuction.
+Are you sure you want to bind your router ?"
+This router has been bound to another APP account.If you want to bind it anyway, you should reset this router to its factory settings and try again.
+Bind Now
+Binding...
+Device failed to bind to your APP account. Please click to try again.
+Wi-Fi Settings
+Smart Integrated SSID
+Use the same SSID on both 2.4G and 5G,and the 5G is preferred at the same signal level.
+Wi-Fi Network Name(SSID)
+Hidden SSID
+Wi-Fi Password
+Support WPA3 encryption
+Use 2.4G Wi-Fi Password as Router's Admin Password
+Router's Admin Password
+Use the password of 2.4G Wi-Fi
+Settings Backup
+Local Backup
+Backup this settings to the phone, and then you could use this settings quickly when you reconfigure this router or replace it with a new router.
+Tip
+Configuration succeeded. The new SSID and password will take effect in about 1 minute. Please reconnect your mobile phone to the router Wi-Fi later.
+Excellent
+Weak
+Download Rate
+Upload Rate
+Connected Devices
+Online(%s)
+Parental Control
+Security Settings
+Wi-Fi Management
+Guest Wi-Fi
+Time Settings
+
+
+Router Settings
+Router Name
+Devie Information
+Router LED Indicator
+Remote Management
+Remote Management Enable
+Network IP Version
+Firmware Version
+Reboot Router
+Remove Device
+Disable Remote Management
+Once the Remote Management is disabled，you could not manage your router remotely.Are you sure you want to disable it?
+Save
+Hardware Version
+Serial Number
+Hardware Type
+LAN MAC Address
+LAN IP Address
+WAN MAC Address
+WAN IP Address
+DNS Server
+Online：
+Upgrade
+Upgrade takes a few minutes. The Wi-Fi will temporarily disconnected and you need to reconnect to it later.\nPlease DO NOT turn off the router‘s power supply to avoid corrupting the router’s firmware.
+Update Now
+Upgrading...
+The upgrade process will take a few minutes  .Please do not operate the router during this process.
+"Please DO NOT disconnect the router power 
+supply during upgrade,otherwise it could lead to device damage."
+Firmware Update
+Upgrade failed. Please try again
+Upgrade Successfully!
+Current Version is %s
+It will take about 2 minutes for the router to restart. The Wi-Fi will temporarily disconnected and you need to reconnect to it later. Are you sure to reboot the device?
+This router will be removed from the device list .Once removing it, you can't manage it using this APP.Are you sure to remove the router?
+ago
+%s day(s)
+%s h
+Download :
+Upload :
+Online:
+Internet Access
+Maximum Upload Speed
+Maximum Download Speed
+Device Details
+Device Type
+Brand
+Access Mode:
+Connected:
+"Internet Access Schedule 
+for device"
+Mobile Phone & Tablet
+Select  Device
+Protected
+Myself
+Devices Protected
+
+Are you sure to delete it?
+Set the time period when router allows Internet access
+Internet Access Schedule
+In password mode, all new devices with correct Wi-Fi password will be allowed to access internet.
+Apply
+Access Control
+Safe level:%s
+Intermediate
+High
+Password mode
+Authorization mode
+"All new users are allowed to
+access internet with correct Wi-Fi password."
+Authorization mode is recommended.
+In this mode，only devices with your consent on this APP would be allowed to access the network.
+New Devices
+Whitelist
+Blacklist
+Blocked Devices
+Refuse
+Agree
+Delete
+There is no device in the list
+This feature cannot be configured in Remote Management mode
+Wi-Fi Schedule
+Share Wi-Fi with QR Code
+"If you use an Android phone,please use the
+QR Code Reader of the web browser or phone.Please note some web browser or phone‘s QR code Reader only display the content of the QR code but not automatically connect to the Wi-Fi.."
+"QR Code Reader apears on the right hand 
+of the input bar."
+"If you use an IPhone ,please use QR Code Reader
+of the Control Center to scan the QR code. You should add QR Code Reader to appear in Control Center first."
+Swipe up from the bottom of the screen to view Control Center and you can find the QR Code Reader.
+Setup a schedule for Wi-Fi to turn off regularly.
+Wi-Fi off Time Period
+Guest Wi-Fi provides internet access for guests, but has no  access to your local network.
+"Scan this QR code to Join Guest Wi-Fi network
+by using QR Code Reader on your phone."
+Router Current Time
+Copy Mobilephone‘s Time
+Sync to Network Time Sever Automatically
+Add Device
+Do you want to continue exiting this page?
+
+The camera recordings will only be uploaded and saved to the connected Hub.
+This field can't be empty
+Please note the rule of %1 is %s2
+Please note the length of %s1 is %s2 to %s3 characters long.
+Please note the %s1 is in the range of %s2 to %s3.
+The format of %s is incorrect.
+The %s is incorrect.
+Your phone is not connected to this router's Wi-Fi.You should connect it before you visit this router.
+Connection Failed
+Router's system time is not same as your phone's time.You should sync it with your phone's time before seting time schedule.
+Sync Time

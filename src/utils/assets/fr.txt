@@ -1,0 +1,242 @@
+法语
+Caméra
+
+Routeur
+
+
+
+
+
+
+
+
+
+En ligne
+Hors ligne
+
+
+
+
+La fonction de contrôle à distance est désactivée. Vous pouvez contrôler votre routeur après avoir connecté le Wi-Fi de votre routeur et activer la fonction de contrôle à distance.
+Aide hors ligne du routeur
+Si le routeur est hors ligne, vous pouvez essayer de procéder comme suit :
+
+1. Assurez-vous que l'appareil est sous tension (Observez si l'indicateur LED est allumé).
+2.Essayez de rejoindre ce réseau Wi-Fi et voyez ce qui s'est passé.
+3.Vérifiez si le câble Ethernet entre votre routeur et votre modem ou routeur supérieur se connecte correctement.
+4.Éteignez le routeur et le redémarrez.
+5.Si le problème persiste, veuillez contacter votre Fournisseur de FAI ou contactez-nous.
+Se connecter au routeur Wi-Fi
+
+Remarque : veuillez vous assurer que le routeur est sous tension et connecté à Internet.
+Routeur Wi-Fi introuvable ?
+
+
+Le Wi-Fi du routeur est connecté et le routeur est déjà dans la liste de l'appareil.
+
+Le routeur est détecté et les informations de configuration sont en cours d'obtention.
+Échec d'obtention
+Échec de l'ajout
+Veuillez réessayer d'obtenir les informations du routeur.
+Réinitialiser l'appareil
+2. Si vous avez des questions, vous pouvez joindre une capture d'écran de cette page et de %s, et nous vous aiderons à les résoudre dès que possible.
+Contactez-nous
+Mot de passe de l'administrateur du routeur
+Mot de passe oublié?
+Si vous avez oublié votre mot de passe, vous pouvez le rajouter en retournant à la page d'accueil après avoir réinitialisé l'appareil. Le mot de passe par défaut se trouve sur le corps de l'appareil.
+J'ai compris
+Comment réinitialiser
+Veuillez connecter le routeur Wi-Fi et réessayer
+Connexion au routeur
+Connecter l'appareil
+Connecté avec succès !
+Bienvenue sur le routeur Victure !
+J'ai lu et j'accepte les %s et %s.
+Contrat de licence de l'utilisateur final
+Déclaration de confidentialité sur le routeur Victure Wi-Fi
+Obtenir des informations de configuration
+Échec de l'obtention des informations, veuillez réessayer
+Le câble réseau domestique n'est pas connecté
+1. Assurez-vous que la connexion réseau du routeur est connectée à Internet via un câble réseau, par ex. un chat léger, d'autres routeurs, etc.\n2. Assurez-vous que le câble réseau est connecté du port WAN de ce routeur au port LAN du chat léger.\n3. Veuillez confirmer si le câble réseau est bien branché ou endommagé, et si le chat léger est connecté à l'alimentation.\n4. S'il ne peut toujours pas être détecté, veuillez contacter votre opérateur réseau ou contactez-nous.
+Testez à nouveau
+passer
+En train d'être testé
+Connexion réseau anormale
+Guide de configuration
+Paramètres de sauvegarde trouvés. Voulez-vous l'utiliser ?
+Type de connexion WAN
+Nom du Wi-Fi 2.4G
+Nom du Wi-Fi 5G
+Utiliser une nouvelle configuration
+Utiliser cette sauvegarde
+Comment Réinitialiser le Routeur
+1. Assurez-vous que le routeur est sous tension. Localisez le bouton de réinitialisation ou le trou de réinitialisation à l'arrière du routeur.
+2. Appuyez et maintenez enfoncé le bouton de réinitialisation pendant environ 5 à 8 secondes jusqu'à ce que le voyant du routeur s'éteigne.
+3.Ensuite, le routeur redémarre et est réinitialisé aux paramètres d'usine par défaut. Ce processus prend environ 2 minutes. Après la réinitialisation, vous devez le configurer à nouveau.
+Réinitialiser avec succès
+Pour éviter d'endommager le micrologiciel ou l'équipement, vous devez garder le routeur SOUS TENSION pendant le processus de réinitialisation.
+Paramètres Internet
+
+Détection automatique
+IP automatique (DHCP)
+Le routeur a pu accéder à Internet normalement. Si vous n'avez pas besoin de changer de mode réseau, vous pouvez %s.
+passer
+I.P statique
+Adresse IP
+Masque de sous-réseau
+Passerelle
+DNS principal
+DNS secondaire
+PPPoE (du FAI)
+Nom d'utilisateur
+Mot de passe
+PPTP
+Dynamique
+Statique
+Mode adresse
+Adresse du serveur
+L2TP
+Sélection automatique du mode réseau
+Mise en place
+
+Échec de la configuration. Veuillez réessayer.
+Opération réussie
+Lier le compte
+Lier le compte Victure vous permet d'accéder à distance et de contrôler le routeur à tout moment, n'importe où. Si vous ne liez pas le compte, vous ne pouvez contrôler l'appareil que via le réseau local. Voulez-vous le lier?
+Le routeur a été lié, vous devez demander à l'autre partie de supprimer l'appareil pour le délier, vous pouvez également passer % s avant de pouvoir rajouter l'appareil.
+Lier l'appareil
+Lier l'appareil au compte
+Échec de la liaison de l'appareil au compte, veuillez cliquer sur Réessayer.
+Paramètres Wifi
+SSID intelligent intégré
+Utilisez le même SSID sur les 2.4G et 5G, et le 5G est préféré au même niveau de signal.
+Nom du réseau Wi-Fi (SSID)
+SSID masqué
+Mot de passe WiFi
+Prise en charge du cryptage WPA3
+Utiliser le mot de passe Wi-Fi comme mot de passe de l'administrateur du routeur
+Mot de passe de l'administrateur du routeur
+Utilisez le mot de passe du Wi-Fi 2.4G
+Configurer la sauvegarde
+Sauvegarde locale
+Sauvegardez ces paramètres sur le téléphone, puis vous pourrez utiliser ces paramètres rapidement lorsque vous reconfigurerez ce routeur ou le remplacerez par un nouveau routeur.
+Note
+La configuration est réussie. Le nouveau SSID et le nouveau mot de passe prendront effet dans environ 1 minute. Veuillez reconnecter votre téléphone portable au Wi-Fi du routeur à l'avenir.
+Excellent
+
+Taux de téléchargement
+Taux de téléchargement
+Appareils connectés
+En ligne (%s)
+Contrôle parental
+Paramètres de sécurité
+Gestion de Wi-Fi
+Wi-Fi invité
+Paramètres de temps
+Non lié, %s est accessible à distance
+Lier le compte
+Paramètres du routeur
+Nom du routeur
+Informations sur l'appareil
+Indicateur LED du routeur
+
+Activer la gestion à distance
+Version IP du réseau
+Version du firmware
+Redémarrer le routeur
+Enlevez l'appareil
+Désactiver la gestion à distance
+Une fois que vous avez désactivé la gestion à distance, vous ne pourrez contrôler l'appareil que via la connexion au Wifi du routeur, mais pas à distance. Continuer?
+Sauvegarder
+Version Matérielle
+Numéro de série
+Type de Matériel
+Adresse MAC du LAN
+Adresse IP du LAN
+Adresse MAC WAN
+Adresse IP WAN
+Serveur DNS
+Temps en ligne
+Conseils de mise à niveau
+La mise à jour vers le nouveau firmware prendra quelques minutes. Et votre téléphone se déconnectera du routeur pendant la mise à jour.\nVeuillez NE PAS débrancher l'alimentation du routeur pendant la mise à jour, sinon cela pourrait endommager l'appareil.
+Commencer à mettre à niveau
+Mise à jour du firmware en cours
+La mise à jour prendra quelques minutes. Évitez \ n d'utiliser le routeur pendant ce temps.
+Veuillez ne pas éteindre/réinitialiser pendant le processus de mise à niveau, car cela endommagerait l'appareil.
+Mise à jour du firmware
+Échec de la mise à jour, réessayez
+Mise à niveau réussie
+Version actuelle : % s
+Il faudra environ 2 minutes pour redémarrer le routeur Wi-Fi. Vous devrez peut-être vous reconnecter à ce routeur une fois le redémarrage terminé. Êtes-vous sûr de redémarrer l'appareil ?
+Ce routeur sera supprimé de la liste des appareils. Une fois supprimé, vous ne pourrez plus le gérer à l'aide de cette application. Êtes-vous sûr de supprimer le routeur ?
+avant de
+%s jour(s)
+%s h
+Télécharger :
+Télécharger :
+En ligne:
+Accès Internet
+Vitesse de téléchargement maximale
+Vitesse de téléchargement maximale
+Détails de l'appareil
+
+Marque
+Mode d'accès:
+Connexion:
+Contrôler la période Internet de l'appareil
+Téléphone portable et tablette
+Choisir un appareil
+Protégé
+Moi-même
+Appareils protégés
+Période pendant laquelle l'appareil est autorisé à se connecter
+Êtes-vous sûr de le supprimer ?
+Définir la durée pendant laquelle les appareils peuvent accéder à Internet
+Horaire d'accès Internet
+En mode mot de passe, tous les appareils qui ont entré le mot de passe Wi-Fi correct peuvent être autorisés à accéder au réseau.
+Appliquer
+Contrôle d'accès
+Niveau de sécurité : %s
+Intermédiaire
+Haute
+Mode mot de passe
+Mode d'autorisation
+Dans ce mode, si le mot de passe WiFi est craqué et que le réseau est en cours d'utilisation, cela le ralentira.
+Le mode d'autorisation est recommandé.
+Dans ce mode, seuls les appareils avec votre consentement sur cette application seraient autorisés à accéder au réseau.
+Nouveaux appareils
+Liste blanche
+Liste noire
+
+Refuser
+Accepter
+Supprimer
+Il n'y a aucun appareil dans la liste
+Accès distant au routeur, cette page ne peut pas être configurée
+Horaire Wi-Fi
+Partager le Wi-Fi avec le code QR
+Si vous utilisez un téléphone Android, veuillez utiliser le lecteur de code QR du navigateur Web.
+QR Code Reader apparaît à droite de la barre de saisie.
+Si vous utilisez un iPhone, veuillez utiliser le lecteur de code QR du centre de contrôle pour scanner le code QR. Vous devez d'abord ajouter un lecteur de code QR pour l'afficher dans le centre de contrôle.
+Balayez vers le haut depuis le bas de l'écran pour consulter le Centre de contrôle et vous pouvez trouver le lecteur de code QR.
+Configurez un calendrier pour que le WiFi s'éteigne régulièrement.
+Période d'arrêt automatique du Wi-Fi
+Le Wi-Fi invité fournit un accès Internet aux invités mais ne permet pas l'accès à votre réseau local.
+Scannez ce code QR pour rejoindre le réseau Wi-Fi invité en utilisant le lecteur de code QR sur votre téléphone.
+Heure Actuelle du Routeur
+Copier l'heure du téléphone portable
+Synchronisation Automatique avec le Serveur de Temps Réseau
+Ajouter l'appareil
+Voulez-vous continuer à quitter la page ?
+
+Les enregistrements de la caméra seront uniquement téléchargés et enregistrés sur le Hub connecté.
+%s1 ne peut pas être vide
+Assurez-vous que la règle %s1 est : %s2
+Assurez-vous que la longueur de %s1 est comprise dans %s2-%s3.
+Assurez-vous que la plage de tailles de %s1 est %s2-%s3
+
+% s est incorrect
+L'application n'est pas connectée au routeur wi-fi, ne peut pas accéder au routeur, veuillez connecter l'application au routeur wi-fi.
+La connexion a échoué
+L'heure du routeur ne correspond pas à l'heure du téléphone, veuillez d'abord synchroniser l'heure, puis régler l'heure.
+Synchroniser l'heure
