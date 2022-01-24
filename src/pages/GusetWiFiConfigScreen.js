@@ -13,7 +13,7 @@ import UserInput from '../component/UserInput'
 import { nativeDevicestore } from '../utils/bridge'
 import Switch from '../component/Switch'
 import Toast from 'react-native-root-toast';
-
+import {translations} from '../i18n';
 
 import { setStorageData } from '../api/setStorageData'
 import { getStorageData } from '../api/getStorageData'
@@ -60,7 +60,7 @@ const app = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'SetGuessWiFiConfig',
+            title:translations.router_guest_wifi_guest_wifi ,
             headerTitleAlign: 'center',
             headerStyle: {
                 backgroundColor: '#F5F7FA',
@@ -70,9 +70,9 @@ const app = ({ navigation, route }) => {
             headerLeft: () => (
                 <NavReturn />
             ),
-            headerRight: () => (
-                <NavReturn type='cancel' />
-            ),
+            // headerRight: () => (
+            //     <NavReturn type='cancel' />
+            // ),
         });
     }, []);
     let loadStorageData = async () => {
@@ -208,7 +208,7 @@ const app = ({ navigation, route }) => {
             <KeyboardAvoidingView
                 style={styles.avoidKeyboard}
                 behavior={'position'}
-                keyboardVerticalOffset={Platform.OS == "ios" ? 0 : responseSize * 20}
+                keyboardVerticalOffset={Platform.OS == "ios" ? 60 : responseSize * 20}
                 enabled='true'
             >
                 <ScrollView contentContainerStyle={styles.container}
@@ -221,10 +221,10 @@ const app = ({ navigation, route }) => {
                         resizeMode='center'
                         source={imgUrl}
                     />
-                    <Title title={title} />
+                    <Title title={translations.router_detail_guest_wifi} />
                     <View style={{ marginBottom: responseSize * 10, ...styles.backupSet }}>
                         <Text style={styles.backupSetText}>
-                            Guest WIFI
+                            {translations.router_guest_wifi_guest_wifi}
                         </Text>
                         <Switch
                             value={openGuest}
@@ -235,21 +235,21 @@ const app = ({ navigation, route }) => {
                     {
                         openGuest ? <View style={styles.headContent}>
 
-                            <View style={styles.backupSet}>
+                            {/* <View style={styles.backupSet}>
                                 <Text style={styles.backupSetText}>
-                                    Use backup settings
+                                    {translations.router_config_backup}
                                 </Text>
                                 <Switch
                                     value={backup}
                                     onSyncPress={value => {
                                         setBackup(value)
                                     }} />
-                            </View>
+                            </View> */}
                             <View>
                                 <View style={styles.smartSSID}>
                                     <View style={styles.smartSsidHead}>
                                         <Text style={styles.smartSsidHeadText}>
-                                            Smart Integrated SSID
+                                            {translations.router_smart_intergrated_ssid}
                                         </Text>
                                         <Switch
                                             value={intergrateSSID}
@@ -258,13 +258,12 @@ const app = ({ navigation, route }) => {
                                             }} />
                                     </View>
                                     <Text style={styles.smartSsidText}>
-                                        Use the same SSID on both 2.4G and 5G,and the
-                                        5G is preferred at the same signal level.
+                                        {translations.router_smart_intergrated_ssid_tip}
                                     </Text>
                                 </View>
                                 <View style={styles.networkName}>
                                     <Text style={styles.title}>
-                                        Wi-Fi Network Name({intergrateSSID ? 'SSID' : '2.4G'})
+                                       {translations.router_wifi_name_ssid}({intergrateSSID ? 'SSID' : '2.4G'})
                                     </Text>
                                     <UserInput
                                         defaultValue={ssid}
@@ -278,13 +277,13 @@ const app = ({ navigation, route }) => {
                                             }}
                                         ></Checked>
                                         <Text style={styles.checkText}>
-                                            Hidden SSID
+                                           {translations.router_hidden_ssid}
                                         </Text>
                                     </View>
                                 </View>
                                 <View style={styles.networkName}>
                                     <Text style={styles.title}>
-                                        Wi-Fi Network Password({intergrateSSID ? 'SSID' : '2.4G'})
+                                        {translations.router_wifi_password}({intergrateSSID ? 'SSID' : '2.4G'})
                                     </Text>
                                     <PassWordInput
                                         defaultValue={key}
@@ -303,7 +302,7 @@ const app = ({ navigation, route }) => {
                                                 <View style={styles.encDisable}></View>
                                         }
                                         <Text style={styles.checkText}>
-                                            Support WPA3 encryption{wpaMode}
+                                            {translations.router_support_wpa3_encryption}
                                         </Text>
                                     </View>
                                 </View>
@@ -335,7 +334,7 @@ const app = ({ navigation, route }) => {
                                     {useRouterPassword ? <></> :
                                         <>
                                             <Text style={styles.title}>
-                                                Router's Admin Password
+                                               {translations.router_support_wpa3_encryption}
                                             </Text>
                                             <PassWordInput
                                                 defaultValue={loginpass}
@@ -361,7 +360,7 @@ const app = ({ navigation, route }) => {
                                             }}
                                         ></Checked>
                                         <Text style={styles.checkText}>
-                                            Use Wi-Fi Password as Router's Admin Password
+                                            {translations.router_admin_password_tip}
                                         </Text>
                                     </View>
                                 </View>
@@ -374,14 +373,14 @@ const app = ({ navigation, route }) => {
                     <FootButton
                         loading={loading}
                         onPress={_setWifi}
-                        title={'Save'}
+                        title={translations.router_save}
                         // title={route.params.fromPage=='DeviceHome'?'Save':'Next'}
                         color={global.buttonColor}
                         disabled={checkOK}
                     />
-                    <Text style={styles.footText}>
+                    {/* <Text style={styles.footText}>
                         The router has been able to access the Internet normally. If you don't need to switch the network mode, you can skip it
-                    </Text>
+                    </Text> */}
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>
@@ -396,8 +395,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#fff'
-
+        backgroundColor: '#fff',
+        paddingBottom:responseSize*20,
     },
     container: {
         padding: responseSize * 20,
@@ -506,9 +505,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     encDisable: {
-        width: responseSize * 16,
-        height: responseSize * 16,
-        borderRadius: responseSize * 8,
+        width: responseSize * 18,
+        height: responseSize * 18,
+        margin:responseSize*6,
+        borderRadius: responseSize * 9,
         backgroundColor: 'rgba(65, 66, 69, 0.3)'
     },
     checkText: {

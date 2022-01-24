@@ -13,7 +13,7 @@ import ControlItem from '../../component/ControlItem'
 let imgUrl = require('../../assets/images/ic_nav_delete/ic_nav_delete.png')
 let imgUrlIphone = require('../../../src/assets/images/ic_nav_phone_40/ic_nav_phone_40.png')
 import Swipeable from 'react-native-swipeable';
-import {translations} from '../../i18n'
+import { translations } from '../../i18n'
 
 
 const App = ({ navigation, route }) => {
@@ -22,14 +22,58 @@ const App = ({ navigation, route }) => {
     const [rowID, setRowID] = useState('');
     const [mac, setMac] = useState('');
     const [desc, setDesc] = useState('');
+    const [weekData, setWeekData] = useState([
+        {
+            val: 1,
+            lable: 'M',
+            name: 'monday',
+            select: false,
+        },
+        {
+            val: 2,
+            lable: 'T',
+            name: 'tuesday',
+            select: false,
 
+        },
+        {
+            val: 3,
+            lable: 'W',
+            name: 'wednesday',
+            select: false,
+        },
+        {
+            val: 4,
+            lable: 'T',
+            name: 'thursday',
+            select: false,
+        },
+        {
+            val: 5,
+            lable: 'F',
+            name: 'friday',
+            select: false,
+        },
+        {
+            val: 6,
+            lable: 'S',
+            name: 'saturday',
+            select: false,
+        },
+        {
+            val: 7,
+            lable: 'S',
+            name: 'sunday',
+            select: false,
+        },
+    ]);
     // const _getRuleTempArr = async () => {
     //     let res = await getStorageData({ uid: global.uid, mac: global.lanMac }, 'ruleTempArr')
     //     console.log(res)
     //     let ruleArr = JSON.parse(res)
     //     setRule(ruleArr)
     // }
-   
+
 
     useEffect(() => {
         console.log(111111)
@@ -90,6 +134,17 @@ const App = ({ navigation, route }) => {
     let _getParentalRules = async (macTemp) => {
         let res = await postData(global.wifiNetworkIP, { topicurl: 'getParentalRules' })
         let ruleArrAll = JSON.parse(JSON.stringify(res.rule))
+        ruleArrAll.forEach(n => {
+            let dateArr = []
+            weekData.forEach((m) => {
+                let ok = n.time.split(',')[0].split(';').includes(m.val + '')
+                if (ok) {
+                    dateArr.push(m.name)
+                }
+            })
+            n.date = dateArr
+        })
+
         let ruleTempArr = ruleArrAll.filter((n) => {
             return n.mac == macTemp
         })
@@ -114,7 +169,7 @@ const App = ({ navigation, route }) => {
         return (
             <Swipeable
                 style={styles.listItem}
-                rightButtonWidth={responseSize*120}
+                rightButtonWidth={responseSize * 120}
                 rightButtons={
                     [<TouchableHighlight
                         activeOpacity={0.6}
@@ -141,7 +196,8 @@ const App = ({ navigation, route }) => {
                         }
                         navigation.navigate('ParentalControler', data)
                     }}
-                    title={getStringTime(item.time)} date={item.time.split(',')[0]} />
+                    title={getStringTime(item.time)} 
+                    date={item.date.map((item)=>{return (translations[item]+' ')})} />
             </Swipeable>
         );
     }
@@ -195,7 +251,7 @@ const styles = StyleSheet.create({
     },
     delButton: {
         backgroundColor: '#ddd',
-        width:responseSize*120,
+        width: responseSize * 120,
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',

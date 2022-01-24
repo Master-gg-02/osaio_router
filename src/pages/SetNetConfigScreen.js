@@ -4,6 +4,7 @@ import Progress from '../component/Progress'
 import Title from '../component/Title'
 import FootButton from '../component/FootButton'
 import NavReturn from '../component/NavReturn'
+import { translations } from '../i18n'
 
 import IPContainer from '../component/IPContainer'
 import PPPoEContainer from '../component/PPPoEContainer'
@@ -13,23 +14,17 @@ import { getStorageData } from '../api/getStorageData'
 import { setStorageData } from '../api/setStorageData'
 
 import global from '../utils/global';
-let responseSize=global.responseSize
+let responseSize = global.responseSize
 import { postData } from '../api/postData'
 
 import { Dropdown } from 'react-native-element-dropdown'
 import Toast from 'react-native-root-toast';
 import Switch from '../component/Switch'
 
-
-// import RNPickerSelect from 'react-native-picker-select';
-
-
-let title = `How does your router connect to the network?`
-let footerText = `The router has been able to access the Internet normally. If you don't need to switch the network mode, you can skip it`
 const data = [
-    { value: '1', label: 'Automatic IP（DHCP）' },
-    { value: '0', label: 'Static IP' },
-    { value: '3', label: 'PPPoE (from ISP)' },
+    { value: '1', label: translations.router_internet_setting_dhcp },
+    { value: '0', label: translations.router_config_static_ip },
+    { value: '3', label: translations.router_internet_setting_pppoe },
 ];
 let imgUrl = require('../../src/assets/images/ic_nav_confirm_off/ic_nav_confirm_off.png')
 let imgUrlOption = require('../../src/assets/images/ic_options_down_on_off/ic_options_down_on_off.png')
@@ -59,7 +54,7 @@ const app = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'SetNetConfig',
+            title: translations.router_internet_setting_title,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -196,7 +191,7 @@ const app = ({ navigation, route }) => {
         var re = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/;//正则表达式   
         if (re.test(ip)) {
             if (RegExp.$1 < 256 && RegExp.$2 < 256 && RegExp.$3 < 256 && RegExp.$4 < 256) {
-                Toast.show('请注意ip格式：xxx.xxx.xxx.xxx')
+                Toast.show(translations.router_internet_setting_error.format('ip', '\'xxx.xxx.xxx.xxx\''))
                 return false;
             }
         }
@@ -216,7 +211,7 @@ const app = ({ navigation, route }) => {
                 }).length
                 if (a >= 1) {
                     console.log('IP有误！')
-                    Toast.show('请注意ip格式：xxx.xxx.xxx.xxx')
+                    Toast.show(translations.router_internet_setting_error.format('ip', '\'xxx.xxx.xxx.xxx\''))
                     return
                 }
                 Object.assign(routerOptionNetconfig, {
@@ -242,7 +237,7 @@ const app = ({ navigation, route }) => {
         }
         navigation.navigate('SetWiFiConfig', routerOptionNetconfig)
         if (modalVisible) {
-            console.log(routerOptionNetconfig,'备份网络设置')
+            console.log(routerOptionNetconfig, '备份网络设置')
             await setStorageData({ uid: global.uid, lanMac: global.lanMac }, 'netConfig', JSON.stringify(routerOptionNetconfig))
         }
 
@@ -271,7 +266,6 @@ const app = ({ navigation, route }) => {
         } else {
             setDropdown('1')
         }
-        console.log('点击了自动选择')
     }
 
     return (
@@ -279,7 +273,7 @@ const app = ({ navigation, route }) => {
             <KeyboardAvoidingView
                 style={styles.avoidKeyboard}
                 behavior={'position'}
-                keyboardVerticalOffset={Platform.OS == "ios" ? 0 : responseSize * -200}
+                keyboardVerticalOffset={Platform.OS == "ios" ? 20 : responseSize * -200}
                 enabled='true'
             >
                 <ScrollView
@@ -289,11 +283,11 @@ const app = ({ navigation, route }) => {
                     bounces={false}
                 >
                     <View style={styles.headContent}>
-                        <Progress step={2}></Progress>
-                        <Title title={title} />
+                        <Progress step={1}></Progress>
+                        <Title title={translations.router_add_set_net_config_title} />
                         <View style={styles.backupSet}>
                             <Text style={{ color: '#414245', fontWeight: '700' }}>
-                                Use backup settings
+                                {translations.router_config_backup}
                             </Text>
                             <Switch
                                 value={modalVisible}
@@ -323,9 +317,13 @@ const app = ({ navigation, route }) => {
                                 )}
                                 renderItem={item => _renderItem(item)}
                             />
-                            <Text style={styles.autoPick}
-                                onPress={_autoPick}
-                            >voluntarily pick</Text>
+                            <TouchableOpacity
+                                onPress={() => {
+                                    _autoPick()
+                                }} >
+                                <Text style={styles.autoPick}>{translations.router_add_set_net_config_voluntarily_pick}</Text>
+                            </TouchableOpacity>
+
                             {
                                 (() => {
                                     switch (dropdown) {
@@ -365,13 +363,23 @@ const app = ({ navigation, route }) => {
                     <FootButton
                         onPress={_setNextWork}
                         color={global.buttonColor}
-                        title={route.params.fromPage == 'DeviceHome' ? 'Save' : 'Next'}
+                        title={translations.next}
                         // title={'Next'}
                         disabled={checkOK}
                     />
-                    <Text style={styles.footerText}>
-                        {footerText}
-                    </Text>
+                    <TouchableOpacity
+                        onPress={() => {
+                            navigation.navigate('SetWiFiConfig')
+                        }}
+                    >
+                        <Text style={styles.footerText}>
+                            {translations.router_add_set_net_config_footer}
+                            <Text style={styles.skip}>
+                                {translations.router_add_set_net_config_footer_skip}
+                            </Text>
+                            {translations.router_add_set_net_config_footer_it}
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>
@@ -484,6 +492,9 @@ const styles = StyleSheet.create({
     },
     footer: {
         marginTop: responseSize * 20,
+    },
+    skip: {
+        color: global.buttonColor
     },
     footerText: {
         color: '#4142454D',

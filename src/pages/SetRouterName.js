@@ -17,7 +17,7 @@ const App = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: translations.router_device_detail_name,
+            title: translations.router_connect_setting_device_name,
             headerTitleAlign: 'center',
             headerShadowVisible: false,
             headerStyle: {
@@ -59,21 +59,13 @@ const App = ({ navigation, route }) => {
     }, [routerName])
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
-            {/* <KeyboardAvoidingView
-                style={styles.avoidKeyboard}
-                behavior={'position'}
-                keyboardVerticalOffset={Platform.OS == "ios" ? 0 : responseSize * -20}
-                enabled='true'
-            > */}
-
-
                     <View style={styles.headContent}>
                         <Image
                             style={styles.directionImg}
                             resizeMode='center'
                             source={imgUrl}
                         />
-                        <Title title={translations.router_device_detail_name} />
+                        <Title title={translations.router_connect_setting_device_name} />
                         <UserInput
                             defaultValue={routerName}
                             onChange={(e) => {
@@ -92,8 +84,6 @@ const App = ({ navigation, route }) => {
                             disabled={!isNext}
                         />
                     </View>
-                {/* </ScrollView> */}
-            {/* </KeyboardAvoidingView> */}
         </SafeAreaView>
 
     );

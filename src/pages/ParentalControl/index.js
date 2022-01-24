@@ -11,15 +11,59 @@ import { ListItem, Button } from 'react-native-elements'
 import { getStringTime } from '../../utils/util'
 import ControlItem from '../../component/ControlItem'
 let imgUrl = require('../../assets/images/ic_nav_delete/ic_nav_delete.png')
-import {translations} from '../../i18n'
+import { translations } from '../../i18n'
 import Swipeable from 'react-native-swipeable';
-let headText = 'Allow internet devices and time period ( {0} ) '
 
 
-const App = ({ navigation, route }) => {
+const App = ({ navigation }) => {
 
     const [rule, setRule] = useState([]);
     const [ruleAll, setRuleAll] = useState([]);
+    const [weekData, setWeekData] = useState([
+        {
+            val: 1,
+            lable: 'M',
+            name: 'monday',
+            select: false,
+        },
+        {
+            val: 2,
+            lable: 'T',
+            name: 'tuesday',
+            select: false,
+
+        },
+        {
+            val: 3,
+            lable: 'W',
+            name: 'wednesday',
+            select: false,
+        },
+        {
+            val: 4,
+            lable: 'T',
+            name: 'thursday',
+            select: false,
+        },
+        {
+            val: 5,
+            lable: 'F',
+            name: 'friday',
+            select: false,
+        },
+        {
+            val: 6,
+            lable: 'S',
+            name: 'saturday',
+            select: false,
+        },
+        {
+            val: 7,
+            lable: 'S',
+            name: 'sunday',
+            select: false,
+        },
+    ]);
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', () => {
             _getParentalRules()
@@ -37,7 +81,7 @@ const App = ({ navigation, route }) => {
     })
     useLayoutEffect(() => {
         navigation.setOptions({
-            title:translations.router_parental_control ,
+            title: translations.router_parental_control,
             headerTitleAlign: 'center',
             headerStyle: { height: responseSize * 43 },
             headerShadowVisible: false,
@@ -65,15 +109,28 @@ const App = ({ navigation, route }) => {
         let ruleArrAll = JSON.parse(JSON.stringify(res.rule))
         let ruleArr = []
         let temp = []
-        ruleArr = res.rule.filter(n => {
+        ruleArrAll.forEach(n => {
+            let dateArr = []
+            weekData.forEach((m) => {
+                let ok = n.time.split(',')[0].split(';').includes(m.val + '')
+                if (ok) {
+                    dateArr.push(m.name)
+                }
+            })
+            n.date = dateArr
+        })
+        ruleArr = ruleArrAll.filter(n => {
             if (!temp.includes(n.mac)) {
                 temp.push(n.mac)
                 return true
             }
         });
+
+
+        console.log(temp)
         setRule(ruleArr)
         setRuleAll(ruleArrAll)
-        console.log(res, 1111)
+        console.log(ruleArrAll, 1111)
 
     }
     let _delParentalRules = async (item) => {
@@ -102,7 +159,13 @@ const App = ({ navigation, route }) => {
                     console.log(11111)
 
                 }}
-                rightButtonWidth={responseSize*120}
+                onPanAnimatedValueRef={(optional,event)=>{
+                    // console.log(optional,event)
+                }}
+                onRef={(optional,event)=>{
+                    // console.log(optional,event)
+                }}
+                rightButtonWidth={responseSize * 120}
                 rightButtons={
                     [<TouchableHighlight
                         activeOpacity={0.6}
@@ -120,7 +183,7 @@ const App = ({ navigation, route }) => {
                 <ControlItem leftImg={true}
                     title={item.desc}
                     time={getStringTime(item.time)}
-                    date={item.time.split(',')[0]}
+                    date={item.date.map((item)=>{return (translations[item]+' ')})}
                     onPress={() => {
                         navigation.navigate('ParentalControlSchedule', { mac: item.mac, desc: item.desc })
                     }}
@@ -142,7 +205,7 @@ const App = ({ navigation, route }) => {
                     }}
                 />}
                 keyExtractor={item => item.mac}
-                ListHeaderComponent={<Text style={styles.title}>{translations.router_parental_control_allow_internet+'('+rule.length+')'}</Text>}
+                ListHeaderComponent={<Text style={styles.title}>{translations.router_parental_control_allow_internet + '(' + rule.length + ')'}</Text>}
             />
         </SafeAreaView>
     );
@@ -169,7 +232,7 @@ const styles = StyleSheet.create({
     },
     delButtton: {
         backgroundColor: '#ddd',
-        width:responseSize*120,
+        width: responseSize * 120,
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',

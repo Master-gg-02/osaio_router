@@ -4,7 +4,7 @@ import global from '../utils/global';
 let responseSize=global.responseSize
 import IpTextInput from './IpTextInput'
 import Toast from 'react-native-root-toast';
-
+import { translations } from '../i18n';
 const App = (props) => {
     function f_check_IP(ip) {
         var re = /^(\d+)\.(\d+)\.(\d+)\.(\d+)$/;//正则表达式   
@@ -13,10 +13,7 @@ const App = (props) => {
                 return false;
             }
         }
-        Toast.show('请注意ip格式：xxx.xxx.xxx.xxx', {
-            duration: Toast.durations.LONG,
-            position: Toast.positions.CENTER
-        })
+        Toast.show(translations.router_internet_setting_error.format('ip', '\'xxx.xxx.xxx.xxx\''))
         return true;
     }
     return (
@@ -34,7 +31,7 @@ const App = (props) => {
                 }}
             />
             <IpTextInput
-                title='子网掩码'
+                title={translations.router_internet_setting_subnet_mask}
                 value={props.maskValue}
                 onChange={props.onMaskChange}
                 onFocus={props.onFocus}
@@ -45,7 +42,7 @@ const App = (props) => {
                 }}
             />
             <IpTextInput
-                title='网关'
+                title={translations.router_internet_setting_gateway}
                 value={props.gatewayValue}
                 onChange={props.onGatewayChange}
                 onFocus={props.onFocus}
@@ -57,7 +54,7 @@ const App = (props) => {
 
             />
             <IpTextInput
-                title='首选DNS服务器'
+                title={translations.router_internet_setting_primary_dns}
                 value={props.priDnsValue}
                 onChange={props.onPriDnsChange}
                 onFocus={props.onFocus}
@@ -68,7 +65,7 @@ const App = (props) => {
                 }}
             />
             <IpTextInput
-                title='备用DNS服务器'
+                title={translations.router_internet_setting_secondary_dns}
                 value={props.secDnsValue}
                 onChange={props.onSecDnsChange}
                 onFocus={props.onFocus}

@@ -2,7 +2,7 @@ import LocalizedStrings from 'react-native-localization'; // 2
 import * as RNLocalize from 'react-native-localize'; 
 
 import en from './en.json';
-import zh from './zh.json';
+import zh from './zh_CN.json';
 import es from './es.json';
 import de from './de.json';
 import fr from './fr.json';

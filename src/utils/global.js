@@ -33,6 +33,7 @@ export default {
     nativeDebug:false,
     model:'',
     productName:'AX18',
+    ssid:'',
     BaseUrl:'',
     buttonColor:'#B4E555',
     addThemeColor:'',

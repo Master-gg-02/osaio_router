@@ -2,9 +2,10 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { SafeAreaView, View, StyleSheet, Text, Image, ScrollView } from 'react-native';
 import NavReturn from '../component/NavReturn'
 import FootButton from '../component/FootButton'
-
-
-import Toast from 'react-native-root-toast';
+import { nativeRemove } from '../utils/bridge'
+import { clearStorageData } from '../api/clearStorageData'
+// import Toast from 'react-native-root-toast';
+import Toast from 'react-native-toast-message';
 import { postData } from '../api/postData'
 import Dialog from '../component/Dialog'
 import { getStorageData } from '../api/getStorageData'
@@ -21,6 +22,13 @@ const App = ({ navigation, route }) => {
     const [fmVersion, setFmVersion] = useState('');
     const [rebootRouter, setRebootRouter] = useState(false);
     const [upDateOTG, setUpDateOTG] = useState(false);
+    const showToast = () => {
+        Toast.show({
+            type: 'error',
+            text1: 'Hello',
+            text2: 'This is some something 👋'
+        });
+    }
     let _getDeviceName = async () => {
         let res = await getStorageData({ uid: global.uid }, 'deviceName')
         if (res != null) {
@@ -78,15 +86,32 @@ const App = ({ navigation, route }) => {
         setShowIndicator(ledStatus)
     }
     let _setLedCfg = async (value) => {
+        console.log(11111)
+        // showToast()
+        Toast.show({
+            type: value ? 'success' : 'error',
+            text1: 'Hello',
+            text2: value + ' 👋',
+            onPress: () => {
+                Toast.hide();
+            }
+        });
+
+        // console.log(this.toast,'pppp')
+        // this.toast.show('hello world!');
+        return
         let data = { topicurl: 'setLedCfg', enable: value ? '1' : '0' }
         console.log(data)
         let res = await postData(global.wifiNetworkIP, data)
         console.log(res)
         if (res.success == true) {
-            Toast.show(value ? translations.router_detail_setting_on+ '!' : translations.cam_setting_night_vision_type_off+'!', {
-                duration: Toast.durations.SHORT,
-                position: Toast.positions.CENTER
-            })
+            console.log(11111)
+            console.log(this.toast, 'pppp')
+            this.toast.show('hello world!');
+            // Toast.show(value ? translations.router_detail_setting_on+ '!' : translations.cam_setting_night_vision_type_off+'!', {
+            //     duration: Toast.durations.SHORT,
+            //     position: Toast.positions.CENTER
+            // })
         }
     }
     let _RebootSystem = async () => {
@@ -142,7 +167,7 @@ const App = ({ navigation, route }) => {
             <ScrollView contentContainerStyle={styles.container}
                 bounces={false}
             >
-                <View style={{flex:1}}>
+                <View style={{ flex: 1 }}>
                     <SettingItem title={translations.router_detail_setting_router_name} img={true} subTitle={deviceName} onPress={() => { navigation.navigate('SetRouterName', { deviceName }) }} />
                     <SettingItem title={translations.router_detail_setting_device_information} img={true} onPress={() => { navigation.navigate('DeviceInfo') }} />
                     <SettingItem title={translations.router_detail_setting_led_indicator} switch={true} value={showIndicator} onSyncPress={(value) => {
@@ -162,6 +187,7 @@ const App = ({ navigation, route }) => {
                         color={global.buttonColor}
                     />
                 </View>
+                <Toast />
                 <Dialog
                     title={translations.router_reboot_dialog_info}
                     content={translations.router_reboot_dialog_msg}
@@ -211,10 +237,21 @@ const App = ({ navigation, route }) => {
                     cancle={() => {
                         setRemoveRouter(false)
                     }}
-                    confirm={() => {
+                    confirm={async () => {
                         // 删除路由器 goto 
                         //清除本地路由器配置的缓存，告诉原生路由器已经被清除
+                        let removeDeviceData = {
+                            uid: global.uid,
+                            lanMac: global.lanMac,
+                            model: global.model,
+                            deviceName: global.ssid,
+                            key: 'addRouterDiveice'
+                        }
+                        let res = await nativeRemove(removeDeviceData)
+                        console.log(res)
+                        alert(res)
                         setRemoveRouter(false);
+                        clearStorageData({ uuid: global.uid, lanMac: global.lanMac }, 'netAndwifiConfig')
                     }}
 
                     onBackdropPress={() => {

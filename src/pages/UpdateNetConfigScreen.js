@@ -13,7 +13,6 @@ import {translations} from '../i18n'
 import { getStorageData } from '../api/getStorageData'
 import { setStorageData } from '../api/setStorageData'
 
-
 import { checkIp, onlyNumberDot } from '../utils/util'
 import global from '../utils/global';
 let responseSize = global.responseSize
@@ -26,9 +25,9 @@ let responseSize = global.responseSize
 let title = `How does your router connect to the network?`
 let footerText = `The router has been able to access the Internet normally. If you don't need to switch the network mode, you can skip it`
 const data = [
-    { value: '1', label: 'Automatic IP（DHCP）' },
-    { value: '0', label: 'Static IP' },
-    { value: '3', label: 'PPPoE (from ISP)' },
+    { value: '1', label: translations.router_internet_setting_dhcp},
+    { value: '0', label: translations.router_config_static_ip },
+    { value: '3', label: translations.router_internet_setting_pppoe },
 ];
 let imgUrl = require('../../src/assets/images/ic_nav_confirm_off/ic_nav_confirm_off.png')
 let imgUrlOption = require('../../src/assets/images/ic_options_down_on_off/ic_options_down_on_off.png')
@@ -53,19 +52,19 @@ const app = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'SetNetConfig',
+            title: translations.router_internet_setting_title,
             headerTitleAlign: 'center',
             headerStyle: {
                 backgroundColor: '#F5F7FA',
                 borderBottomWidth: 0,
-                // elevation: 0,
+                elevation: 0,
             },
             headerLeft: () => (
                 <NavReturn />
             ),
-            headerRight: () => (
-                <NavReturn type='cancel' />
-            ),
+            // headerRight: () => (
+            //     <NavReturn type='cancel' />
+            // ),
         });
     }, []);
 
@@ -249,7 +248,7 @@ const app = ({ navigation, route }) => {
             <KeyboardAvoidingView
                 style={styles.avoidKeyboard}
                 behavior={Platform.OS == "ios" ? 'position' : 'position'}
-                keyboardVerticalOffset={Platform.OS == "ios" ? 0 : responseSize * 20}
+                keyboardVerticalOffset={Platform.OS == "ios" ? 60 : responseSize * 20}
                 enabled={true}
             >
                 <ScrollView
@@ -259,7 +258,7 @@ const app = ({ navigation, route }) => {
                     bounces={false}
                 >
                     <View style={styles.headContent}>
-                        <Title title={title} />
+                        <Title title={translations.router_add_set_net_config_title} />
                         {/* <View style={styles.backupSet}>
                             <Text style={{ color: '#414245', fontWeight: '700' }}>
                                 Use backup settings
@@ -292,9 +291,12 @@ const app = ({ navigation, route }) => {
                                 )}
                                 renderItem={item => _renderItem(item)}
                             />
-                            <Text style={styles.autoPick}
-                                onPress={_autoPick}
-                            >voluntarily pick</Text>
+                             <TouchableOpacity
+                                onPress={() => {
+                                    _autoPick()
+                                }} >
+                                <Text style={styles.autoPick}>{translations.router_add_set_net_config_voluntarily_pick}</Text>
+                            </TouchableOpacity>
                             {
                                 (() => {
                                     switch (dropdown) {
@@ -338,9 +340,9 @@ const app = ({ navigation, route }) => {
                         // title={'Next'}
                         disabled={checkOK}
                     />
-                    <Text style={styles.footerText}>
+                    {/* <Text style={styles.footerText}>
                         {footerText}
-                    </Text>
+                    </Text> */}
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>
@@ -353,8 +355,8 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        backgroundColor: '#fff'
-
+        backgroundColor: '#fff',
+        paddingBottom:responseSize*20,
     },
     container: {
         padding: responseSize * 20,

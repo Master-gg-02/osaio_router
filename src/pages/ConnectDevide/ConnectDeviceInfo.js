@@ -43,7 +43,7 @@ const HomeScreen = ({ navigation,route }) => {
     })
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: ' DeviceInfo',
+            title: translations.router_connect_setting_device_name,
             headerTitleAlign: 'center',
             headerStyle: { height: responseSize * 43 },
             headerShadowVisible: false,
@@ -63,7 +63,7 @@ const HomeScreen = ({ navigation,route }) => {
             <ScrollView contentContainerStyle={styles.container}
                 bounces={false}
             >
-                <SettingItem title={translations.router_device_detail_name} info ={deviceName}  />
+                <SettingItem title={translations.router_connect_setting_device_name} info ={deviceName}  />
                 <SettingItem title={translations.router_device_detail_ip_address} info={IP} />
                 <SettingItem title={translations.router_device_detail_mac_address} info={mac}  />
             </ScrollView>

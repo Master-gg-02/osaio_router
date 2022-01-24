@@ -4,11 +4,10 @@ import FootButton from '../component/FootButton'
 import NavReturn from '../component/NavReturn'
 import SetItem from '../component/SetItem'
 import * as RNLocalize from 'react-native-localize';
-
+import { getStorageData } from '../api/getStorageData'
 import { nativeGatewayIP } from '../utils/bridge'
 import { translations } from '../i18n'
 import { postData } from '../api/postData'
-
 import global from '../utils/global';
 let responseSize = global.responseSize
 import Toast from 'react-native-root-toast';
@@ -21,28 +20,28 @@ let ParentalControlUrl = require('../../src/assets/images/ic_link_parental/ic_li
 let guestWifiUrl = require('../../src/assets/images/ic_link_features_guest/ic_link_features_guest.png')
 let WifiManagemantUrl = require('../../src/assets/images/ic_link_features_managemant/ic_link_features_managemant.png')
 
+// import NetInfo from "@react-native-community/netinfo";
 
+// import { NetworkInfo } from 'react-native-network-info';
 const App = ({ navigation }) => {
     const [upRate, setUpRate] = useState('0');
     const [downRate, setDownRate] = useState('0');
     const [connectCounts, setConnectCounts] = useState(0);
     const [showIndicator, setShowIndicator] = useState(false);
-    const [title, setTitle] = useState(global.productName);
-
-
+    const [title, setTitle] = useState(global.ssid);
 
     let conversionRate = async (n) => {
         if (n >= 100 && n <= 1024) {
             let a = (n / 1024).toFixed(3)
-            return a + 'm'
+            return a * 8 + 'm'
         } else if (n > 1024) {
             let a = (n / (1024 * 1024)).toFixed(3)
-            return a + 'g'
+            return a * 8 + 'g'
         } else if (n > 1024 * 1024) {
             let a = (n / (1024 * 1024)).toFixed(3)
-            return a + 't'
+            return a * 8 + 't'
         } else {
-            return n + 'k'
+            return n * 8 + 'k'
         }
     }
     let getSystemIp = async () => {
@@ -73,14 +72,18 @@ const App = ({ navigation }) => {
         })
         global.lanMac = res.lanMac
         setTitle(res.productName)
-        global.productName=res.productName
-        console.log(res, 'lanMac')
-    }
-    // getSystemIp().then(() => {
-    //       getNetInfoCfg()
-    //       getAccessDeviceCfg()
-    // })
+        global.productName = res.productName
+        let ssid = await getStorageData({
+            uid: global.uid
+        }, 'deviceName')
+        if (ssid = !null) {
+            global.ssid = ssid
+        } else {
+            global.ssid = res.ssid
 
+        }
+        // console.log(res, '信息')
+    }
 
     useEffect(() => {
         if (!global.debug) {
@@ -88,15 +91,33 @@ const App = ({ navigation }) => {
                 getSystemIp().then(() => {
                     getNetInfoCfg()
                     getAccessDeviceCfg()
-                   _getLanMac()
+                    _getLanMac()
                 })
             }
         }
+        // Subscribe
+        // const unsubscribe = NetInfo.addEventListener(state => {
+        //     console.log("Connection type", state.type);
+        //     console.log("Is connected?", state.isConnected);
+        // });
+        // NetInfo.fetch("other").then(state => {
+        //     console.log("SSID", state.details);
+        //     console.log("BSSID", state.details.bssid);
+        //     console.log("Is connected?", state.isConnected);
+        // });
+
+
+
+
+        // Unsubscribe
+
 
         // interval(function () {
 
         // }, 3000, 20);
         return () => {
+            // unsubscribe();
+
             //return出来的函数本来就是更新前，销毁前执行的函数，现在不监听任何状态，所以只在销毁前执行
             // myClearInterval(timer)
         }
@@ -168,8 +189,6 @@ const App = ({ navigation }) => {
         </SafeAreaView>
     );
 }
-
-
 
 const styles = StyleSheet.create({
     container: {

@@ -41,8 +41,8 @@ export default class App extends Component<Props> {
            isAdd && Loading == false ?<StatusBar  backgroundColor={isAdd && Loading == false ?'#fff':isAdd == false && Loading == false ?'#F5F7FA':'#fff'} networkActivityIndicatorVisible={true} barStyle={'dark-content'}
            />:<></>
          } */}
-         {/* <StatusBar backgroundColor={isAdd && Loading == false ? '#fff' : isAdd == false && Loading == false ? '#F5F7FA' : '#fff'} networkActivityIndicatorVisible={true} barStyle={'dark-content'} */}
-         {/* /> */}
+         <StatusBar backgroundColor={isAdd && Loading == false ? '#fff' : isAdd == false && Loading == false ? '#F5F7FA' : '#fff'} networkActivityIndicatorVisible={true} barStyle={'dark-content'}
+         />
          {/* <Stack.Navigator initialRouteName={isAdd && Loading == false?'Home':isAdd == false && Loading == false?'DeviceHome': 'HomeLoading'}> */}
          <Stack.Navigator initialRouteName={'Home'}>
            {/* {

@@ -34,44 +34,44 @@ const App = ({ navigation, route }) => {
         {
             val: 1,
             lable: 'M',
-            name: '星期一',
+            name: 'monday',
             select: false,
         },
         {
             val: 2,
             lable: 'T',
-            name: '星期二',
+            name: 'tuesday',
             select: false,
 
         },
         {
             val: 3,
             lable: 'W',
-            name: '星期三',
+            name: 'wednesday',
             select: false,
         },
         {
             val: 4,
             lable: 'T',
-            name: '星期四',
+            name: 'thursday',
             select: false,
         },
         {
             val: 5,
             lable: 'F',
-            name: '星期五',
+            name: 'friday',
             select: false,
         },
         {
             val: 6,
             lable: 'S',
-            name: '星期六',
+            name: 'saturday',
             select: false,
         },
         {
             val: 7,
             lable: 'S',
-            name: '星期日',
+            name: 'sunday',
             select: false,
         },
     ]);

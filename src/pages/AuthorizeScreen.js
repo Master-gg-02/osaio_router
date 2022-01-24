@@ -9,6 +9,7 @@ import global from '../utils/global';
 let responseSize = global.responseSize
 console.log(responseSize)
 import * as RNLocalize from "react-native-localize";
+import {translations} from '../i18n'
 
 
 let title = `connection succeeded`
@@ -18,7 +19,7 @@ const app = ({ navigation }) => {
     const [modalVisible, setModalVisible] = useState(false);
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'Authorize',
+            title: translations.router_add_authorize_head,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -29,42 +30,13 @@ const app = ({ navigation }) => {
         });
     }, []);
     const _getLauguageCode = async () => {
-        console.log(new Date(), 55555)
-        let res = RNLocalize.getLocales()[0]
-        console.log(new Date(), 3333)
-
-        console.log(res.languageCode, 'languageCode')
-        switch (res.languageCode) {
-            case 'zh':
-                code = 'zh'
-                break;
-            case 'ru':
-                code = 'ru'
-                break;
-            case 'pl':
-                code = 'pl'
-                break;
-            case 'it':
-                code = 'it'
-                break;
-            case 'fr':
-                code = 'fr'
-                break;
-            case 'es':
-                code = 'es'
-                break;
-            case 'de':
-                code = 'de'
-                break;
-            case 'ja':
-                code = 'ja'
-                break;
-            default:
-                code = 'en'
-                break;
+        let language = RNLocalize.getLocales()[0].languageCode
+        let arr =['en', 'zh', 'es', 'de', 'fr', 'it', 'ja' ]
+        if(arr.includes(language)){
+            return language
+        }else{
+            return 'en'
         }
-        console.log(new Date())
-        return code
     }
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
@@ -72,8 +44,8 @@ const app = ({ navigation }) => {
                 bounces={false}
                 contentContainerStyle={styles.container}>
                 <View style={styles.headContent}>
-                    <Progress step={1}></Progress>
-                    <Title title={title} />
+                    <Progress step={0}></Progress>
+                    <Title title={translations.router_add_connect_success_status} />
                     <Image
                         style={styles.directionImg}
                         resizeMode='center'
@@ -93,7 +65,7 @@ const app = ({ navigation }) => {
                             </Checked>
                         </View>
                         <Text style={styles.agreeStatement}>
-                            I have read and agree to&nbsp;
+                            {translations.router_add_authorize_agree} &nbsp;
                             <Text
                                 hitSlop={{ top: responseSize * 10, bottom: responseSize * 10 }}
                                 onPress={async () => {
@@ -103,19 +75,20 @@ const app = ({ navigation }) => {
                                     navigation.navigate('WebView', { url: url, name: 'Licnese Agreement' })
                                 }}
                                 style={styles.licnese}>
-                                the End User Licnese Agreement&nbsp;&nbsp;
+                                {translations.router_add_authorize_agreement}&nbsp;&nbsp;
                             </Text>
-                            and &nbsp;
+                            {translations.router_add_authorize_agree_and}&nbsp;&nbsp;
                             <Text
                                 hitSlop={{ top: responseSize * 10, bottom: responseSize * 10 }}
                                 onPress={async () => {
                                     let code = await _getLauguageCode()
                                     let contryCode = 'us'
                                     let url = 'https://www.gncchome.com/privacy-policy-' + contryCode + '-' + code
+                                    console.log(url)
                                     navigation.navigate('WebView', { url: url, name: 'Statement Privacy' })
                                 }}
                                 style={styles.statement}>
-                                the Statement About GNCC Wi-Fi Router and Privacy.
+                                    {translations.router_add_authorize_privacy.format(global.productName)}
                             </Text>
                         </Text>
                     </View>
@@ -123,7 +96,7 @@ const app = ({ navigation }) => {
                         onPress={async () => {
                             navigation.navigate('SetNetConfig', { fromPage: 'Authorize' })
                         }}
-                        title='Next'
+                        title={translations.next}
                         color={global.buttonColor}
                         disabled={!modalVisible}
                     />
@@ -196,7 +169,6 @@ const styles = StyleSheet.create({
         paddingHorizontal: responseSize * 25,
         flexDirection: 'row',
         justifyContent: 'center',
-        // alignItems:'flex-start'
     },
     agreeStatement: {
         flexDirection: 'row',

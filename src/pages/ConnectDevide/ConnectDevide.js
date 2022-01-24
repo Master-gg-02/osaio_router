@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { SafeAreaView, View, StyleSheet, Text, Image, ScrollView } from 'react-native';
 import NavReturn from '../../component/NavReturn'
 import global from '../../utils/global';
-let responseSize=global.responseSize
+let responseSize = global.responseSize
 import { postData } from '../../api/postData'
 import DeviceItem from '../../component/DeviceItem'
 import CounterEmitter from '../../utils/CountEmitter';
@@ -17,16 +17,21 @@ let imgUrl = require('../../../src/assets/images/ic_nav_phone_40/ic_nav_phone_40
 const App = ({ navigation, route }) => {
     const [allowConnect, setAllowConnect] = useState(false);
     const [deviceName, setDeviceName] = useState('');
+    const [mac, setMac] = useState('');
+    const [lock, setLock] = useState(false);
+
+
     const [linkType, setLinkType] = useState('');
 
-    let _getConnectDevideInfo = async() => {
-        let res = await getStorageData({ uid: global.uid} , 'ConnectDevideInfo')
+    let _getConnectDevideInfo = async () => {
+        let res = await getStorageData({ uid: global.uid }, 'ConnectDevideInfo')
         if (res != null) {
             console.log(res)
-            let data=JSON.parse(res)
+            let data = JSON.parse(res)
             setDeviceName(data.name)
             setAllowConnect(data.white)
             setLinkType(data.linkType)
+            setMac(data.mac)
         }
     }
     // useEffect(() => {
@@ -48,7 +53,6 @@ const App = ({ navigation, route }) => {
         if (!flag.current) {
             flag.current = true
         } else {
-            console.log(route.params)
         }
     })
     useLayoutEffect(() => {
@@ -70,19 +74,28 @@ const App = ({ navigation, route }) => {
     let _setAccessDeviceCfg = async (value) => {
         let data = {
             topicurl: 'setAccessDeviceCfg',
-            mac_array: [{ mac: route.params.mac }],
+            mac_array: [{ mac }],
             addEffect: '1',
             modelType: value ? 'white' : 'black'
         }
         console.log(data, '设置黑名单')
         let res = await postData(global.wifiNetworkIP, data)
-        console.log(res)
-        // if(res.successs){
-        //     Toast.show('successs', {
-        //         duration: Toast.durations.SHORT,
-        //         position: Toast.positions.CENTER
-        //     })
-        // }
+        console.log(res, '设置黑名单成功')
+        if (res.success) {
+            if (lock==false) {
+                setLock(true)
+                Toast.show(translations.success + '!', {
+                    duration: Toast.durations.SHORT,
+                    position: Toast.positions.CENTER,
+                    animation: true,
+                    onHide: () => {
+                        setLock(false)
+                        console.log(222222)
+                    }
+                })
+            }
+
+        }
     }
 
 
@@ -92,7 +105,7 @@ const App = ({ navigation, route }) => {
                 bounces={false}
             >
                 <DeviceItem type iconUrl={imgUrl} title={translations.router_connect_setting} subTitle={linkType} />
-                <SettingItem title={translations.router_device_detail_name} img={true} subTitle={overflowText(deviceName,15)} onPress={() => { navigation.navigate('SetDeviceName',{deviceName}) }} />
+                <SettingItem title={translations.router_connect_setting_device_name} img={true} subTitle={overflowText(deviceName, 15)} onPress={() => { navigation.navigate('SetDeviceName', { deviceName }) }} />
                 <SettingItem title={translations.router_connect_setting_intert_access_enable} switch={true} value={allowConnect} onSyncPress={(value) => {
                     _setAccessDeviceCfg(value)
                     setAllowConnect(value)

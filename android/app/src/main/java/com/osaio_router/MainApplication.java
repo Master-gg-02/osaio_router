@@ -3,7 +3,11 @@ package com.osaio_router;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import org.reactnative.maskedview.RNCMaskedViewPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
+import com.swmansion.rnscreens.RNScreensPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.reactnativecommunity.webview.RNCWebViewPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 import com.zoontek.rnlocalize.RNLocalizePackage;
@@ -12,7 +16,6 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.horcrux.svg.SvgPackage;
 import com.henninghall.date_picker.DatePickerPackage;
-import com.swmansion.rnscreens.RNScreensPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -34,7 +37,11 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNCMaskedViewPackage(),
+            new ReanimatedPackage(),
+            new RNScreensPackage(),
             new RNGestureHandlerPackage(),
+            new RNCWebViewPackage(),
             new RNCMaskedViewPackage(),
             new SafeAreaContextPackage(),
             new RNLocalizePackage(),
@@ -43,7 +50,6 @@ public class MainApplication extends Application implements ReactApplication {
             new RNDeviceInfo(),
             new SvgPackage(),
             new DatePickerPackage(),
-            new RNScreensPackage(),
             new AsyncStoragePackage()
       );
     }

@@ -6,14 +6,13 @@ let responseSize=global.responseSize
 import UserInput from './UserInput'
 import Checked from './Checked'
 import PasswordInput from './PasswordInput'
-
-
+import {translations} from '../i18n'
 const App = (props) => {
     return (
         <View>
             <View style={styles.networkName}>
                 <Text style={styles.title}>
-                    Wi-Fi Network Name(5G)
+                   {translations.router_wifi_name_ssid} (5G)
                 </Text>
                 <UserInput
                     defaultValue={props.ssid}
@@ -25,13 +24,13 @@ const App = (props) => {
                         onPress={props.hssidOnChange}
                     ></Checked>
                     <Text style={styles.checkText}>
-                        Hidden SSID
+                       {translations.router_hidden_ssid}
                     </Text>
                 </View>
             </View>
             <View style={styles.networkName}>
                 <Text style={styles.title}>
-                    Wi-Fi Network password(5G)
+                    {translations.router_wifi_password}(5G)
                 </Text>
                 <PasswordInput 
                     defaultValue={props.ssidkey}
@@ -49,7 +48,7 @@ const App = (props) => {
                     }
 
                     <Text style={styles.checkText}>
-                        Support WPA3 encryption
+                        {translations.router_support_wpa3_encryption}
                     </Text>
                 </View>
             </View>
@@ -72,9 +71,9 @@ const styles = StyleSheet.create({
         borderRadius: responseSize * 10,
     },
     networkNameFooter: {
-        marginTop: responseSize * 10,
         flexDirection: "row",
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        alignItems: 'center',
     },
     encDisable: {
         width: responseSize * 16,
@@ -83,12 +82,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(65, 66, 69, 0.3)'
     },
     checkText: {
-        // maxWidth:responseSize*345,
         flexWrap: 'wrap',
-        marginLeft: responseSize * 10,
-        color: '#414245',
-        fontWeight: '700',
-        marginBottom: responseSize * 28,
+        marginLeft: responseSize * 12,
+        color: '#9D9D9D',
+        fontWeight: '400',
     },
 });
 export default App;

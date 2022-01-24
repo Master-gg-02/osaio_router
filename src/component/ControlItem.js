@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     date: {
         lineHeight: responseSize * 17.8,
         fontSize: responseSize * 14,
+        maxWidth:responseSize*240,
         fontWeight: '400',
         color: '#010C11',
         opacity: 0.5,

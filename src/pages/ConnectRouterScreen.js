@@ -1,26 +1,23 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { SafeAreaView, View, StyleSheet, Image, Text, ScrollView, AppState,AppStateStatic } from 'react-native';
+import { SafeAreaView, View, StyleSheet, Image, Text, ScrollView, AppState, AppStateStatic } from 'react-native';
 import Progress from '../component/Progress'
 import Title from '../component/Title'
 import FootButton from '../component/FootButton'
 import NavReturn from '../component/NavReturn'
 import Dialog from '../component/Dialog'
 import { nativeWiFiView, nativeGatewayIP } from '../utils/bridge'
-import {nativePopPage} from '../utils/bridge'
-
+import { nativePopPage } from '../utils/bridge'
+import { translations } from '../i18n'
 import { postData } from '../api/postData'
-
-
-
 import { getStorageData } from '../api/getStorageData'
 import { clearStorageData } from '../api/clearStorageData'
-// import {responseSize} from '..//utils/util'
+
 
 import global from '../utils/global';
-let responseSize=global.responseSize
-console.log(typeof responseSize,'responseSize')
- 
+let responseSize = global.responseSize
+console.log(typeof responseSize, 'responseSize')
+
 let title = `Please connect to the router hotspot`
 let attention = `1. Connect to Wi-Fi starting with “GNCC”
 2. Return to Osaio APP after successful connection`
@@ -46,69 +43,64 @@ const App = ({ navigation, route }) => {
     };
 
     useEffect(() => {
-        // 获取本地存储的路由列表设备 查看当前设备是否已经被添加
-        console.log("这是模拟componentDidMount钩子函数", 'connect')
         AppState.addEventListener("change", _handleAppStateChange);
         return () => {
-            //return出来的函数本来就是更新前，销毁前执行的函数，现在不监听任何状态，所以只在销毁前执行
-            // clearTimeout(timer)
             AppState.removeEventListener("change", _handleAppStateChange);
-            // AppStateStatic.removeEventListener("change", _handleAppStateChange);
-            // .removeEventListener()
-            console.log("这是模拟componentWillUnmount钩子函数")
         }
     }, [])
-    _getWifiModle = async() => {
+    let _getWifiModle = async () => {
+        console.log(222222, global.wifiNetworkIP)
+
         // 获取WiFi设备的品类名称
         let getInitCfg = await postData(global.wifiNetworkIP, {
             topicurl: 'getInitCfg'
         })
+        console.log(getInitCfg, 2222)
         global.model = getInitCfg.model
-        console.log(global.model,'model')
+        console.log(global.model, 'model')
     }
-    _getLanMac = async() => {
+    let _getLanMac = async () => {
+        console.log(222221, global.wifiNetworkIP)
         // 获取WiFi设备的型号
         let res = await postData(global.wifiNetworkIP, {
             topicurl: "getSysStatusCfg"
         })
         global.lanMac = res.lanMac
-        console.log(res.lanMac,'lanMac')
+        global.ssid = res.ssid
+        global.productName = res.productName
+        console.log(res.lanMac, 'lanMac')
+    }
+    // 获取系统的WiFi地址
+    let _getGateWay = async () => {
+        let res = await nativeGatewayIP({});
+        console.log(res, 'ip地址')
+        if (res.result) {
+            global.wifiNetworkIP = res.routerip
+        } else {
+            // 提示用户是否正确连接WiFi
+            console.log('请检查是否正确连接')
+        }
+    }
+    //从缓存中取存储的网络或者WiFi配置信息
+    let checkConfig = async () => {
+        let res = await getStorageData({
+            uid: global.uid,
+            lanMac: global.lanMac
+        }, 'netAndwifiConfig')
+        console.log(res, 'netAndwifiConfig')
+        if (res != null) {
+            setModalVisible(true)
+            return
+        }
     }
     _findSystemWifi = async () => {
         try {
-            // 获取系统的WiFi地址
-            let res = await nativeGatewayIP({});
-            console.log(res, 'ip地址')
-            if (res.status == 'ok') {
-                global.wifiNetworkIP = res.responsed
-                timer = null
-            } else {
-                // 提示用户是否正确连接WiFi
-                console.log('请检查是否正确连接')
-            }
-            // 取mac地址和model名称
-            // if (global.debug == false) {
-
-            // }
-            await _getLanMac()
-            await _getWifiModle()
-         
-            //从缓存中取存储的网络或者WiFi配置信息
-            let getNetAndwifiConfig = await getStorageData({
-                uid: global.uid,
-                lanMac: global.lanMac
-            }, 'netAndwifiConfig')
-            console.log(getNetAndwifiConfig, 12331)
-            if (getNetAndwifiConfig != null) {
-                setModalVisible(true)
-                return
-            }
-
-            // 如果不存在则跳转到下一页
+            await _getGateWay()
+            await Promise.all([_getWifiModle(), _getLanMac()])
+            await checkConfig()
             navigation.navigate('LoginRouter')
-
         } catch (e) {
-            console.error(e);
+            console.log(e);
         }
     }
     //第二个参数一定是一个空数组，因为如果不写会默认监听所有状态，这样写就不会监听任何状态，只在初始化时执行一次。
@@ -122,7 +114,7 @@ const App = ({ navigation, route }) => {
     })
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'Connect',
+            title: translations.router_connect_head,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -135,11 +127,11 @@ const App = ({ navigation, route }) => {
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <ScrollView contentContainerStyle={styles.container}
-            bounces={false}
+                bounces={false}
             >
                 <View style={styles.headContent}>
-                    <Progress step={1}></Progress>
-                    <Title title={title} />
+                    <Progress step={0}></Progress>
+                    <Title title={translations.router_connect_header} />
                     <Image
                         style={styles.directionImg}
                         resizeMode='center'
@@ -147,36 +139,30 @@ const App = ({ navigation, route }) => {
                     />
                     <View>
                         <Text style={styles.textAttention}>
-                            {attention}
+                            {translations.router_connect_indictor.format('')}
                         </Text>
                     </View>
                 </View>
                 <FootButton
                     onPress={async () => {
-                        // 已经连接过WiFi直接调到下一页
-                        // if (global.wifiNetworkIP != '') {
-                        //     navigation.navigate('LoginRouter')
-                        //     return
-                        // }
-
                         let res = await nativeWiFiView({});
                         console.log(res)
                     }}
-                    title='Connect'
+                    title={translations.router_connect_head}
                     color={global.buttonColor}
                 />
             </ScrollView>
             <Dialog
-                title='You have bound the device'
-                content='Wi-Fi of the router is connected, and the router already exists in the device list'
-                cancleTitle='Cancle'
-                confirmTitle='Check'
+                title={translations.router_connect_dialog_title}
+                content={translations.router_router_connect_wifi_msg}
+                cancleTitle={translations.cancel_normal}
+                confirmTitle={translations.router_connect_dialog_check}
                 isVisible={modalVisible}
                 cancle={() => {
                     clearStorageData({ uuid: global.uid, lanMac: global.lanMac }, 'netAndwifiConfig')
                     // console.log('暂时清除同一设备的缓存');
-                     setModalVisible(false);
-                     nativePopPage()
+                    setModalVisible(false);
+                    nativePopPage()
                 }}
                 confirm={() => {
                     // 直接跳转到WiFi详情页面
@@ -212,7 +198,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         lineHeight: responseSize * 20,
         marginTop: responseSize * 20,
-        marginBottom:  10,
+        marginBottom: 10,
     },
     directionImg: {
         width: responseSize * 280,

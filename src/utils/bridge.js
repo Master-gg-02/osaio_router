@@ -3,7 +3,7 @@ import CountrySelectConponent from 'react-native-element-dropdown/src/SelectCoun
 
 
 let RNPageManager = NativeModules.YRRNBridgeManager
-import Toast from 'react-native-root-toast';
+// import Toast from 'react-native-root-toast';
 // let uniDeal=(url,data)=>{
 //     return new Promise(async(resolve,reject)=>{
 //         let res = await RNPageManager.requestAsyn(url, data)
@@ -56,12 +56,15 @@ import Toast from 'react-native-root-toast';
 let nativeWiFiView = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrbase/systemwifi', data);return res.data }
 let nativePopPage = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yruibusiness/pop', data);return res.data }
 let nativePopToRootView = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yruibusiness/rootview', data);return res.data }
+// react-native-network-info代替 不在使用该接口
 let nativeGatewayIP = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrbase/routerip', data);return res.data }
+
 let nativeDevicestore = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrxrouter/devicestore', data);return res.data }
 let nativeViewroutetype = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrrnbridge/viewroutetype', data);return res.data }
 let nativeUserid = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrcxsdk/uid', data);return res.data }
 let nativeUserinfo = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrusercomponentlmpl/userinfo', data);return res.data }
 
+let nativeRemove = async (data) => { let res= await RNPageManager.requestAsyn('yrcx://yrxrouter/remove', data);return res.data }
 
 
 export {
@@ -73,6 +76,7 @@ export {
     nativeViewroutetype,
     nativeUserid,
     nativeUserinfo,
+    nativeRemove,
 }
 
 

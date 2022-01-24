@@ -10,7 +10,7 @@ import global from '../utils/global';
 let responseSize=global.responseSize
 
 import { postData } from '../api/postData'
-
+import {translations} from '../i18n'
 import Toast from 'react-native-root-toast';
 const title = 'connection succeeded'
 let imgUrl = require('../../src/assets/images/illus_connect_scanning_router/illus_connect_scanning_router.png')
@@ -25,7 +25,7 @@ const App = ({ navigation }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'LoginRouter',
+            title: translations.router_add_login_router_head,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -44,14 +44,12 @@ const App = ({ navigation }) => {
                 enabled='true'
             >
                 <ScrollView
-                    contentContainerStyle={styles.container}
                     keyboardShouldPersistTaps='handled'
                     bounces={false}
                 >
-
-                    <View style={styles.headContent}>
-                        <Progress step={1}></Progress>
-                        <Title title={title} />
+                    <View style={styles.container}>
+                        <Progress step={0}></Progress>
+                        <Title title={translations.router_add_connect_success_status} />
                         <Image
                             style={styles.directionImg}
                             resizeMode='center'
@@ -59,36 +57,18 @@ const App = ({ navigation }) => {
                         />
                         <View style={styles.routerPassWord}>
                             <Text style={styles.passWord}>
-                                Password
+                                {translations.router_admin_password_title}
                             </Text>
                             <View style={styles.passWordInputBox}>
                                 <TextInput
                                     style={styles.passWordInput}
-                                    placeholder='Password'
+                                    placeholder={translations.password}
                                     placeholderTextColor='#9D9D9D'
                                     value={passWordValue}
                                     maxLength={64}
                                     secureTextEntry={true}
                                     returnKeyType='done'
                                     textContentType='password'
-                                    // rejectResponderTermination={true}
-                                    onBlur={() => {
-                                        // scrolltoEedEl.scrollTo({
-                                        //     y: 0, y: 0, animated: true
-                                        // })
-                                        // setContentOffset({ x: 0, y: 0})
-                                    }}
-                                    onFocus={() => {
-                                        // if (Platform.OS == 'ios') {
-
-                                        // } else {
-                                        //     setContentOffset({ x: 0, y: responseSize * -260 })
-                                        // }
-                                        // console.log(scrolltoEedEl.scrollToEnd)
-                                        // setTimeout(() => {
-                                        //     scrolltoEedEl.scrollToEnd({ animated: true, duration: 500 })
-                                        // }, 500)
-                                    }}
                                     onChange={
                                         (e) => {
                                             let EventObject = e.nativeEvent;
@@ -120,15 +100,14 @@ const App = ({ navigation }) => {
                                 hitSlop={{ top: responseSize * 30, bottom: responseSize * 30 }}
                             >
                                 <Text style={styles.forgetPassword}>
-                                    Forget password
+                                  {translations.router_admin_forget_password}
                                 </Text>
                             </TouchableWithoutFeedback>
                             <Text style={styles.defaultPassword}>
-                                The default password can be found on the device body
+                                {translations.router_admin_tips_password}
                             </Text>
                         </View>
                     </View>
-
                 </ScrollView>
                 <View style={styles.footer}>
                     <FootButton
@@ -140,10 +119,7 @@ const App = ({ navigation }) => {
                                 password: passWordValue,
                                 topicurl: 'getCheckPasswordResult'
                             }
-                            console.log(global.debug)
                             if (global.debug == false) {
-                                console.log(data)
-                                console.log(global.wifiNetworkIP)
                                 let res = await postData(global.wifiNetworkIP, data)
                                 console.log(res)
                                 if (res.checkPassword == 'OK') {
@@ -158,16 +134,16 @@ const App = ({ navigation }) => {
                             }
                             // navigation.navigate('Authorize')
                         }}
-                        title='Next'
+                        title={translations.next}
                         color={global.buttonColor}
                     />
                 </View>
             </KeyboardAvoidingView>
             <Dialog
-                title='忘记密码'
-                content='如果你忘记了密码，可以通过重置设备后返回首页重新添加，是否前往如何重置路由器？'
-                cancleTitle='我知道了'
-                confirmTitle='如何重置路由器'
+                title={translations.router_admin_forget_password}
+                content={translations.router_config_dialog_forget_msg}
+                cancleTitle={translations.router_i_got_it}
+                confirmTitle={translations.router_add_login_router_reset_route_head}
                 isVisible={forgetPasswordVisible}
                 cancle={() => {
                     setForgetPasswordVisible(false);
@@ -189,21 +165,18 @@ const App = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     avoidKeyboard: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#fff',
+        width: '100%',
+        flexGrow: 1,
+        justifyContent:'space-between',
+        alignItems:"center"
     },
     container: {
         width: '100%',
-        flexGrow: 1,
-        paddingHorizontal: responseSize * 35,
-
-    },
-    headContent: {
         marginTop: responseSize * 20,
-        alignItems: 'center',
+        paddingHorizontal:responseSize*35,
+        flexGrow: 1,
         justifyContent: 'center',
+        alignItems:"center"
     },
     routerPassWord: {
         marginTop: responseSize * 21,
@@ -213,7 +186,6 @@ const styles = StyleSheet.create({
         height: responseSize * 100,
     },
     passWord: {
-        // marginTop:30,
         textAlign: 'left',
     },
     passWordInputBox: {
@@ -240,15 +212,12 @@ const styles = StyleSheet.create({
         marginTop: -responseSize * 6,
     },
     passWordInputImage: {
-        // position:'absolute',
-        // top:'50%',
         right: responseSize * 15,
         width: responseSize * 32,
         height: responseSize * 32,
-        // marginTop:-responseSize*6,
     },
     forgetPassword: {
-        marginTop: responseSize * 10,
+        marginTop: responseSize * 20,
         fontSize: responseSize * 12,
         fontWeight: '700',
         color: global.buttonColor,

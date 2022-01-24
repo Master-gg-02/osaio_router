@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect, useRef, useEffect } from 'react';
-import { SafeAreaView, View, StyleSheet, Text, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { SafeAreaView, View, StyleSheet, Text, ScrollView, KeyboardAvoidingView ,TouchableOpacity} from 'react-native';
 import Progress from '../component/Progress'
 import Title from '../component/Title'
 import FootButton from '../component/FootButton'
@@ -13,8 +13,7 @@ import UserInput from '../component/UserInput'
 import { nativeDevicestore } from '../utils/bridge'
 import Switch from '../component/Switch'
 import Toast from 'react-native-root-toast';
-
-
+import { translations } from '../i18n'
 
 import { setStorageData } from '../api/setStorageData'
 import { getStorageData } from '../api/getStorageData'
@@ -57,7 +56,7 @@ const app = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'SetWiFiConfig',
+            title: translations.router_wifi_setting,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -243,7 +242,7 @@ const app = ({ navigation, route }) => {
             uid: global.uid,
             lanMac: global.lanMac,
             model: global.model,
-            deviceName: 'GNCC-E230',
+            deviceName: global.ssid,
             key: 'addRouterDiveice'
         }
         let res = await nativeDevicestore(nativeStoreDiviceData)
@@ -262,14 +261,20 @@ const app = ({ navigation, route }) => {
         await setStorageData({ uid: global.uid }, 'wifiList', JSON.stringify(wifiList))
     }
 
-
+    // const Skip = () => {
+    //     return (
+    //         <Text style={styles.skip}>
+    //             skip
+    //         </Text>
+    //     )
+    // }
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
             <KeyboardAvoidingView
                 style={styles.avoidKeyboard}
                 behavior={'position'}
-                keyboardVerticalOffset={Platform.OS == "ios" ? 0 : responseSize * -360}
+                keyboardVerticalOffset={Platform.OS == "ios" ? 20 : responseSize * -360}
                 enabled='true'
             >
                 <ScrollView contentContainerStyle={styles.container}
@@ -277,12 +282,12 @@ const app = ({ navigation, route }) => {
                     ref={inputEl}
                     bounces={false}
                 >
-                    <Progress step={2}></Progress>
+                    <Progress step={1}></Progress>
                     <View style={styles.headContent}>
-                        <Title title={title} />
+                        <Title title={translations.router_add_set_net_wifi_config_title} />
                         <View style={styles.backupSet}>
                             <Text style={styles.backupSetText}>
-                                Use backup settings
+                                {translations.router_config_backup}
                             </Text>
                             <Switch
                                 value={backup}
@@ -294,7 +299,7 @@ const app = ({ navigation, route }) => {
                             <View style={styles.smartSSID}>
                                 <View style={styles.smartSsidHead}>
                                     <Text style={styles.smartSsidHeadText}>
-                                        Smart Integrated SSID
+                                        {translations.router_smart_intergrated_ssid}
                                     </Text>
                                     <Switch
                                         value={intergrateSSID}
@@ -303,13 +308,12 @@ const app = ({ navigation, route }) => {
                                         }} />
                                 </View>
                                 <Text style={styles.smartSsidText}>
-                                    Use the same SSID on both 2.4G and 5G,and the
-                                    5G is preferred at the same signal level.
+                                    {translations.router_smart_intergrated_ssid_tip}
                                 </Text>
                             </View>
                             <View style={styles.networkName}>
                                 <Text style={styles.title}>
-                                    Wi-Fi Network Name({intergrateSSID ? 'SSID' : '2.4G'})
+                                    {translations.router_wifi_name_ssid}({intergrateSSID ? 'SSID' : '2.4G'})
                                 </Text>
                                 <UserInput
                                     defaultValue={ssid}
@@ -323,13 +327,13 @@ const app = ({ navigation, route }) => {
                                         }}
                                     ></Checked>
                                     <Text style={styles.checkText}>
-                                        Hidden SSID
+                                        {translations.router_hidden_ssid}
                                     </Text>
                                 </View>
                             </View>
                             <View style={styles.networkName}>
                                 <Text style={styles.title}>
-                                    Wi-Fi Network Password({intergrateSSID ? 'SSID' : '2.4G'})
+                                    {translations.router_wifi_password}({intergrateSSID ? 'SSID' : '2.4G'})
                                 </Text>
                                 <PassWordInput
                                     defaultValue={key}
@@ -348,7 +352,7 @@ const app = ({ navigation, route }) => {
                                             <View style={styles.encDisable}></View>
                                     }
                                     <Text style={styles.checkText}>
-                                        Support WPA3 encryption{wpaMode}
+                                        {translations.router_support_wpa3_encryption}
                                     </Text>
                                 </View>
                             </View>
@@ -376,11 +380,11 @@ const app = ({ navigation, route }) => {
                                     }
                                 />
                             }
-                            <View style={styles.networkName}>
+                            <View style={{ ...styles.networkName, marginTop: responseSize * 20 }}>
                                 {useRouterPassword ? <></> :
                                     <>
                                         <Text style={styles.title}>
-                                            Router's Admin Password
+                                            {translations.router_admin_password}
                                         </Text>
                                         <PassWordInput
                                             defaultValue={loginpass}
@@ -398,7 +402,6 @@ const app = ({ navigation, route }) => {
                                         onPress={() => {
                                             setUseRouterPassword(!useRouterPassword);
                                             if (useRouterPassword) {
-                                                console.log(1111)
                                                 firstTimer = setTimeout(() => {
                                                     inputEl.current.scrollToEnd({ animated: true });
                                                 }, 0)
@@ -406,7 +409,7 @@ const app = ({ navigation, route }) => {
                                         }}
                                     ></Checked>
                                     <Text style={styles.checkText}>
-                                        Use Wi-Fi Password as Router's Admin Password
+                                        {translations.router_admin_password_tip}
                                     </Text>
                                 </View>
                             </View>
@@ -417,14 +420,24 @@ const app = ({ navigation, route }) => {
                     <FootButton
                         loading={loading}
                         onPress={_setWifi}
-                        title={'Next'}
+                        title={translations.next}
                         // title={route.params.fromPage=='DeviceHome'?'Save':'Next'}
                         color={global.buttonColor}
                         disabled={checkOK}
                     />
-                    <Text style={styles.footText}>
-                        The router has been able to access the Internet normally. If you don't need to switch the network mode, you can skip it
-                    </Text>
+                    <TouchableOpacity
+                        onPress={() => {
+                            navigation.navigate('ConfigSuccessful')
+                        }}
+                    >
+                        <Text style={styles.footText}>
+                            {translations.router_add_set_net_config_footer}
+                            <Text style={styles.skip}>
+                                {translations.router_add_set_net_config_footer_skip}
+                            </Text>
+                            {translations.router_add_set_net_config_footer_it}
+                        </Text>
+                    </TouchableOpacity>
                 </View>
             </KeyboardAvoidingView>
         </SafeAreaView>
@@ -548,18 +561,17 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     encDisable: {
-        width: responseSize * 16,
-        height: responseSize * 16,
-        borderRadius: responseSize * 8,
+        width: responseSize * 18,
+        height: responseSize * 18,
+        margin: responseSize * 6,
+        borderRadius: responseSize * 9,
         backgroundColor: 'rgba(65, 66, 69, 0.3)'
     },
     checkText: {
-        // maxWidth:responseSize*345,
         flexWrap: 'wrap',
-        marginLeft: responseSize * 10,
-        color: '#414245',
-        fontWeight: '700',
-        // marginBottom: responseSize * 28,
+        marginLeft: responseSize * 12,
+        color: '#9D9D9D',
+        fontWeight: '400',
     },
     footer: {
         marginTop: responseSize * 10,
@@ -570,6 +582,10 @@ const styles = StyleSheet.create({
         marginHorizontal: responseSize * 20,
         marginTop: responseSize * 5,
 
+    },
+    skip: {
+        marginBottom: responseSize * 12,
+        color: global.buttonColor
     }
 
 });

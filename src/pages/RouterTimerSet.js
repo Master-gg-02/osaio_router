@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from 'react';
-import { StyleSheet, View, SafeAreaView, Text, } from 'react-native';
+import { StyleSheet, View, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 
 import { myClearInterval, mySetInterval } from '../utils/util'
 import NavReturn from '../component/NavReturn'
@@ -10,6 +10,8 @@ import moment from 'moment';
 import Checked from '../component/Checked'
 import { postData } from '../api/postData'
 import { translations } from '../i18n'
+import Toast from 'react-native-root-toast';
+
 const App = ({ navigation, route }) => {
     const [currentTime, setCurrentTime] = useState('');
     const [isNext, setIsNext] = useState(false);
@@ -17,6 +19,8 @@ const App = ({ navigation, route }) => {
 
     const [server, setServer] = useState('');
     const [tz, setTz] = useState('');
+    const [lock, setLock] = useState(false);
+
 
 
 
@@ -64,8 +68,10 @@ const App = ({ navigation, route }) => {
             host_time: moment().format('YYYY-MM-DD HH:mm:ss'),
             topicurl: 'NTPSyncWithHost'
         }
+        console.log(data)
         let res = await postData(global.wifiNetworkIP, data)
         console.log(res)
+        await _setNtpCfg()
     }
     let _setNtpCfg = async () => {
         let data = {
@@ -74,6 +80,7 @@ const App = ({ navigation, route }) => {
             enable: enable ? '1' : '0',
             topicurl: 'setNtpCfg'
         }
+        console.log(data)
         let res = await postData(global.wifiNetworkIP, data)
         console.log(res)
     }
@@ -90,28 +97,49 @@ const App = ({ navigation, route }) => {
 
                     </Text>
                 </View>
-                <Text
-                    style={styles.copy}
+                <TouchableOpacity
                     onPress={() => {
                         setCurrentTime(moment().format('YYYY-MM-DD HH:mm:ss'))
-                    }}>
-                    {translations.router_timezone_copy_mobilephone_time}
-                </Text>
-                <View style={styles.getNetTime}>
-                    <Checked
-                        onPress={() => {
-                            setEnable(!enable)
-                        }}
-                        value={enable}>
-                    </Checked>
+                        if (lock==false) {
+                            setLock(true)
+                            Toast.show(translations.success + '!', {
+                                duration: Toast.durations.SHORT,
+                                position: Toast.positions.CENTER,
+                                animation: true,
+                                onHide: () => {
+                                    setLock(false)
+                                    console.log(222222)
+                                }
+                            })
+                        }
+                    }}
+                >
                     <Text
-                        onPress={() => {
-                            setEnable(!enable)
-                        }}
+                        style={styles.copy}
                     >
-                        {translations.router_timezone_sync_to_network}
+                        {translations.router_timezone_copy_mobilephone_time}
                     </Text>
-                </View>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={{width:'50%'}}
+                    onPress={() => {
+                        setEnable(!enable)
+                    }}>
+                    <View style={styles.getNetTime}>
+                        <Checked
+                            onPress={() => {
+                                setEnable(!enable)
+                            }}
+                            value={enable}>
+                        </Checked>
+
+                        <Text>
+                            {translations.router_timezone_sync_to_network}
+                        </Text>
+
+                    </View>
+                </TouchableOpacity>
+
             </View>
 
             <View style={styles.footer}>
@@ -119,9 +147,7 @@ const App = ({ navigation, route }) => {
                     onPress={() => {
                         // setStorageData({uid:global.uid},'deviceName',routerName)
                         // navigation.navigate('RouterSetting')
-                        _NTPSyncWithHost().then(
-                            () => { _setNtpCfg() }
-                        ).then(() => {
+                        _NTPSyncWithHost().then(() => {
                             navigation.navigate('DeviceHome')
                         })
                     }}
@@ -162,6 +188,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
     getNetTime: {
+        // width:'50%',
         marginLeft: responseSize * 15,
         marginTop: responseSize * 50,
         flexDirection: 'row',

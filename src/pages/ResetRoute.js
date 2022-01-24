@@ -5,11 +5,12 @@ import NavReturn from '../component/NavReturn'
 import global from '../utils/global';
 let responseSize=global.responseSize
 import FootButton from '../component/FootButton'
+import {translations} from '../i18n'
 
 const App = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
-      title: 'How Does Reset Router',
+      title: translations.router_add_login_router_reset_route_head,
       headerTitleAlign: 'center',
       headerStyle: { height: responseSize * 43 },
       headerLeft: () => (
@@ -23,19 +24,18 @@ const App = ({ navigation, route }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.text}>1.请确保路由器已开启。在路由器上找到重置按钮或重置孔。</Text>
-        <Text style={styles.text}>2.长按重置按钮5-8秒，直到路由器的指示灯慢闪</Text>
+        <Text style={styles.text}>{translations.router_how_to_reset_the_router_tip_one}</Text>
+        <Text style={styles.text}>{translations.router_how_to_reset_the_router_tip_two}</Text>
+        <Text style={styles.text}>{translations.router_how_to_reset_the_router_tip_three}</Text>
 
-        <Text style={styles.text}>3.路由器将重启病恢复出厂设置。该过程将大约花费两分钟。完成后您需要重新设置路由器</Text>
-
-        <Text style={styles.acttion}>为避免固件或者设备损坏，重置过程中请确保路由器处于开机状态。</Text>
+        <Text style={styles.acttion}>{translations.router_how_to_reset_the_router_tip_final}</Text>
       </View>
       <View style={styles.footer}>
         <FootButton
           onPress={async () => {
             navigation.navigate('LoginRouter')
           }}
-          title='重置路由器成功'
+          title={translations.router_add_login_router_reset_router_success}
           color={global.buttonColor}
         />
       </View>

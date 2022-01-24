@@ -3,7 +3,7 @@ import { SafeAreaView, View, StyleSheet, Text, Image, ScrollView } from 'react-n
 import FootButton from '../component/FootButton'
 import NavReturn from '../component/NavReturn'
 import Toast from 'react-native-root-toast';
-
+import {translations} from '../i18n'
 import { getStorageData } from '../api/getStorageData'
 
 import global from '../utils/global';
@@ -46,7 +46,7 @@ const HomeScreen = ({ navigation,route }) => {
     }, [navigation]);
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: ' DeviceInfo',
+            title: translations.router_detail_setting_device_information,
             headerTitleAlign: 'center',
             headerStyle: { height: responseSize * 43 },
             headerShadowVisible: false,
@@ -64,9 +64,7 @@ const HomeScreen = ({ navigation,route }) => {
         let res = await getStorageData({ uid: global.uid }, 'deviceName')
         if (res != null) {
             console.log(res)
-            // let data=JSON.parse(res)
             setDeviceName(res)
-            // setAllowConnect(data.white)
         }
     }
     let _getSysStatusCfg= async()=>{
@@ -93,13 +91,13 @@ const HomeScreen = ({ navigation,route }) => {
             <ScrollView contentContainerStyle={styles.container}
                 bounces={false}
             >
-                <SettingItem title='Router Name' info ={deviceName}  />
-                <SettingItem title='Router model' info={model} />
-                <SettingItem title='MAC address'info={lanMac}  />
-                <SettingItem title='Device uuid' info={device_uuid} />
-                <SettingItem title='LAN IP'info={lanIp}  />
+                <SettingItem title={translations.router_connect_setting_device_name} info ={deviceName}  />
+                <SettingItem title={translations.router_info_model} info={model} />
+                <SettingItem title={translations.router_device_detail_mac_address}info={lanMac}  />
+                <SettingItem title={translations.router_info_device_uuid} info={device_uuid} />
+                <SettingItem title={translations.router_info_public_ip_address} info={lanIp}  />
                 <SettingItem title='DNS'info={priDns}  /> 
-                <SettingItem title='Online Duration'info={wanConnTime}  />                 
+                <SettingItem title={ translations.router_info_online_duration}info={wanConnTime}  />                 
             </ScrollView>
         </SafeAreaView>
     );

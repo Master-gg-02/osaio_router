@@ -75,9 +75,9 @@ const App = ({ navigation}) => {
                 {
                     devices.map((item) => {
                         return (
-                            <ControlItem key={item.mac} leftImg title={overflowText(item.name,30)} onPress={() => { 
+                            <ControlItem key={item.mac} leftImg title={overflowText(item.name,22)} onPress={() => { 
                                 if(item.protect){
-                                    Toast.show('The divice already exist ,please do not add it again!', {
+                                    Toast.show(translations.add_device_add_by_yourself, {
                                         duration: Toast.durations.SHORT,
                                         position: Toast.positions.CENTER
                                     })

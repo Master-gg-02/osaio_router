@@ -1,11 +1,8 @@
 import React, { useLayoutEffect, useState, useEffect } from 'react';
 import { StyleSheet, View, SafeAreaView, Image, ScrollView, KeyboardAvoidingView} from 'react-native';
-
 import NavReturn from '../../component/NavReturn'
 import { postData } from '../../api/postData'
 import { translations } from '../../i18n';
-
-let title = 'Setting Device Name'
 import Title from '../../component/Title'
 import FootButton from '../../component/FootButton'
 import UserInput from '../../component/UserInput'
@@ -13,8 +10,6 @@ import global from '../../utils/global';
 let responseSize = global.responseSize
 import { getStorageData } from '../../api/getStorageData'
 import { setStorageData } from '../../api/setStorageData'
-import { G } from 'react-native-svg';
-
 let imgUrl = require('../../../src/assets/images/ic_nav_phone_40/ic_nav_phone_40.png')
 
 
@@ -25,7 +20,7 @@ const App = ({ navigation, route }) => {
 
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: translations.router_device_detail_name,
+            title: translations.router_connect_setting_device_name,
             headerTitleAlign: 'center',
             headerShadowVisible: false,
             headerStyle: {
@@ -100,7 +95,7 @@ const App = ({ navigation, route }) => {
                             resizeMode='center'
                             source={imgUrl}
                         />
-                        <Title title={translations.router_device_detail_name} />
+                        <Title title={translations.router_connect_setting_device_name} />
                         <UserInput
                             defaultValue={deviceName}
                             onChange={(e) => {

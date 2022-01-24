@@ -31,6 +31,7 @@ const App = (props) => {
                                 <Switch
                                     value={props.value}
                                     onSyncPress={props.onSyncPress}
+                                    hitSlop={{ left: 50, right: 50, top: 50, bottom: 50 }}
                                 />
                             </View> :
                             props.info ?
@@ -92,10 +93,9 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     rightIcon: {
-        // marginVertical: responseSize * 15,
+        // marginVertical: responseSize * 4.5,
     },
     rightImg: {
-        // marginVertical: responseSize * 5,
         marginLeft: responseSize * 5,
         width: responseSize * 25,
         height: responseSize * 25,

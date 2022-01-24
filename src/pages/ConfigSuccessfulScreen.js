@@ -4,7 +4,7 @@ import Title from '../component/Title'
 import FootButton from '../component/FootButton'
 import NavReturn from '../component/NavReturn'
 import {nativePopPage} from '../utils/bridge'
-
+import {translations} from '../i18n'
 import global from '../utils/global';
 let responseSize=global.responseSize
 
@@ -15,7 +15,7 @@ const app = ({ navigation }) => {
     const [goto, setGoto] = useState(false);
     useLayoutEffect(() => {
         navigation.setOptions({
-            title: 'ConfigSuccessful',
+            title: translations.router_add_config_success_head,
             headerTitleAlign: 'center',
             headerLeft: () => (
                 <NavReturn />
@@ -29,13 +29,13 @@ const app = ({ navigation }) => {
         <SafeAreaView style={{flex:1}}>
             <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.headContent}>
-                <Title title={title} />
+                <Title title={translations.router_add_config_success_title} />
                 <Image
                     style={styles.directionImg}
                     source={require('../../src/assets/images/ic_device_router/ic_device_router.png')}
                 />
                 <Text style={styles.info}>
-                    {info}
+                    {translations.router_add_config_success_info}
                 </Text>
             </View>
             <FootButton
@@ -43,7 +43,7 @@ const app = ({ navigation }) => {
                     nativePopPage({});
                     // navigation.navigate('WifiList')
                 }}
-                title='OK'
+                title={translations.ok}
                 color={global.buttonColor}
                 // disabled={goto}
             />

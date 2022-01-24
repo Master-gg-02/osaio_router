@@ -4,7 +4,7 @@ import global from '../utils/global';
 let responseSize=global.responseSize
 import PasswordInput from '../component/PasswordInput'
 import UserInput from '../component/UserInput'
-
+import  {translations}from '../i18n'
 
 
 
@@ -12,7 +12,7 @@ const App   = (props) => {
     return (
         <View>
             <View style={styles.inputBox}>
-                <Text style={styles.title}>用户名</Text>
+                <Text style={styles.title}>{translations.router_user_name}</Text>
                 {/* <TextInput
                     style={styles.input}
                     value={props.userName}
@@ -25,7 +25,7 @@ const App   = (props) => {
 
             </View>
             <View style={styles.inputBox}>
-                <Text style={styles.title}>密码</Text>
+                <Text style={styles.title}>{translations.password}</Text>
                 <PasswordInput
                     defaultValue={props.password}
                     onChange={props.onPasswordChange}
